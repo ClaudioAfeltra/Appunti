@@ -1,0 +1,843 @@
+\documentclass{article} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yfonts}
+\usepackage{geometry}
+\usepackage{nopageno}
+\geometry{a4paper,top=3cm,bottom=3cm,left=1cm,right=2cm,heightrounded,bindingoffset=10mm}
+\usepackage[utf8x]{inputenc}
+\newcommand{\Got}[1]{\Large{\textgoth{#1}}}
+\newcommand{\got}[1]{\mathfrak{#1}}
+\newcommand{\GOT}[1]{\LARGE{\textgoth{#1}}}
+\newcommand{\vet}[1]{\overrightarrow{\mathfrak{#1}}}
+
+\begin{document}
+ 
+ \begin{center}
+	\Huge{\textgoth{Geometria affine}}
+  
+	\vspace{1cm}
+  
+	\GOT{Gruppo delle traslazioni}
+ \end{center}
+ 
+ \Got{Sia} $\got{X}$ \Got{un  insieme non vuoto. Si definisce} $$\got{S(X)=\{f:X\to X\quad biunivoche\}}.$$ 
+ \Got{Allora} $\got{(S(X),}\circ\got)$ \Got{è un gruppo.}
+ 
+ \GOT{Definizione: }\Got{Si dice gruppo di trasformazioni di} $\got{X}$ \Got{ogni sottogruppo di} $\got{S(X).}$
+ 
+ \GOT{Esempi: }\Got{}$\got{GL(V)}$ \Got{(dove} $\got{V}$ \Got{è uno spazio vettoriale);} $\got{O(V,\phi)}$ \Got{con} $\got{\phi\in PS(V).}$
+ 
+ \vspace{0.8cm}
+ 
+ \Got{Esistono trasformazioni naturali e semplici, ma non lineari.}
+ 
+ \GOT{Definizione: }\Got{Dato uno spazio vettoriale} $\got{V}$ \Got{ed un suo elemento} $\got{v}$ \Got{si dice traslazione di vettore} $\got{v}$
+ 
+ \Got{la funzione}
+ 
+ \begin{eqnarray*}
+	\got{\tau_v:V} & \to & \got{V} \\
+	\got{w} & \mapsto & \got{w+v}
+ \end{eqnarray*}
+ 
+ \GOT{Osservazione: }\Got{}$\got{\tau_v}$ \Got{è lineare se e solo se} $\got{v=0}$.
+  
+	\vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Sia} $\got{T(V)=\{\tau_v\;|\;v\in V\}}$. \Got{Allora} $\got{(T(V),}\circ\got{)}$
+ \Got{è un gruppo abeliano di trasformazioni di} $\got{V}$, \Got{ed è isomorfo a} $\got{(V,+)}$.
+ 
+ \GOT{Dimostrazione: }\Got{La proprietà associativa vale perché l'insieme è formato da funzioni.}
+ $\got{\tau_0}$ \Got{è evidentemente l'elemento neutro, e} $\got{\forall v\in V\;\; \tau_v}\circ\got{\tau_{-v}=\tau_{-v}}\circ\got{\tau_v=id=\tau_0}$, 
+ \Got{dunque} $\got{\tau_v^{-1}=\tau_{-v}}$.
+ \Got{Inoltre} $\got{\forall u,v,w\in V\quad (\tau_v}\circ\got{\tau_w)(u)=\tau_v(\tau_w(u))=\tau_v(u+w)=u+w+v=\tau_w(\tau_v(u))=}$\\
+ $\got{=(\tau_w}\circ\got{\tau_w)(v)=(\tau_w}\circ\got{\tau_v)(u)}$, \Got{dunque } $\got{\tau_v}\circ\got{\tau_w(u)=\tau_w}\circ\got{\tau_v}$,
+ \Got{ pertanto il gruppo è abeliano.
+ Per la seconda parte della tesi, la funzione}
+ 
+ \begin{eqnarray*}
+	\got{(V,+)} & \to & \got{(T(V))} \\
+	\got{v} & \mapsto & \got{\tau_v}
+ \end{eqnarray*}
+  
+ \Got{è un isomorfismo di gruppi, perché è ovviamente biunivoca, e } $\got{\tau_{v+w}=\tau_v}\circ\got{\tau_w}$.
+ 
+ \begin{center}
+	\GOT{Azione di un gruppo}
+ \end{center}
+ 
+ \Got{Dato un gruppo} $\got{G}$ \Got{ed un insieme} $\got{X}$ \Got{si dice azione di} $\got{G}$ \Got{su} $\got{X}$ \Got{un omomorfismo}
+ $\psi:\got{G\to S(x)}$.
+ \Got{L'azione si dice transitiva se } $\got{\forall x,y\in X\;\;\exists g\in G}$ \Got{tale che } $\got{\psi(g)(x)=y}$.
+ 
+ \GOT{Osservazione: }\Got{}$\got{T(V)}$ \Got{agisce su} $\got{V}$ \Got{in modo transitivo.
+ Infatti se} $\got{v,w\in V,\quad\tau_{w-v}(v)=w}$.
+ 
+ \begin{center}
+	\GOT{Gruppo delle isometrie}
+ \end{center}
+ 
+ \Got{Sia} $\got{(V,\phi)}$ \Got{uno spazio euclideo.} $\got{\phi}$ \Got{induce una distanza} $\got{d}$ \Got{su} $\got{V}$. \Got{Allora si pone}
+ $$\got{Isom(V,d)=\{f:V\to V\;|\;\forall P,Q\in V\quad d(P,Q)=d(f(P),f(Q))\}}.$$
+ 
+ \GOT{Osservazioni: }\Got{}
+ 
+ \begin{itemize}
+	\item $\got{O(V,\phi)\subseteq Isom(V,d)}$;
+	\item $\got{T(V)\subseteq Isom(V,d)}$;
+	\item $\got{\forall v\in V,\forall f\in O(V,\phi)\quad\tau_v}\circ\got{ f\in Isom(V,d)}$
+ \end{itemize}
+ 
+ \GOT{Lemma: }\Got{}$\got{\forall v\in V, \forall f\in GL(V)}$ \Got{(e dunque in particolare per} 
+ $\got{f\in O(V,\phi))}$\\
+ $\got{f}\circ\got{\tau_v=\tau_{f(v)}}\circ\got{ f}$ \Got{(dunque in generale} $\got{f}$ \Got{e} $\got{\tau_v}$ \Got{non commutano)}.
+ 
+ \GOT{Dimostrazione: }\Got{}$\got{(f}\circ\got{\tau_v)(x)=f(x+v)=f(x)+f(v)=\tau_{f(v)}(f(x))=(\tau_{f(v)}}\circ\got{ f)(x)}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{}$\got{\{\tau_v}\circ\got{ f\;|\;v\in V,f\in O(V,\phi)\}}$ \Got{è un gruppo rispetto alla composizione.}
+ 
+ \GOT{Dimostrazione: }\Got{Poiché}  $\got{(\tau_v}\circ\got{ f)}\circ\got{(\tau_w}\circ\got{ g)=\tau_v}\circ\got{(f}\circ\got{\tau_w)}\circ\got{ g=
+ \tau_v}\circ\got{\tau_{f(w)}}\circ\got{ f}\circ\got{ g}$, \Got{tale insieme è chiuso rispetto alla composizione.
+ Inoltre per questo è vero che} $\got{(\tau_v}\circ\got{ f)}\circ\got{(\tau_w}\circ\got{ g)=id}$ \Got{se e solo se} $\got{\tau_v}\circ\got{\tau_{f(w)}}\circ\got{ f}\circ\got{ g}$,
+ \Got{la qual cosa è senza dubbio vera se} $\got{f(w)=-v}$ \Got{ e}  $\got{f}\circ\got{ g=id}$, \Got{ossia se} $\got{w=-f^{-1}(v)}$ \Got{ e }
+ $\got{g=f^{-1}}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: }\Got{Analogamente si dimostra che anche} $\got{\{\tau_v}\circ\got{ f\;|\;v\in V,f\in GL(V)\}}$ 
+ \Got{è un gruppo di trasformazioni.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Teorema: }\Got{}$\got{Isom(V,\phi)=\{\tau_v}\circ\got{ f\;|\;v\in V,f\in O(V,\phi)\}}$.
+ 
+ \GOT{Dimostrazione: }\Got{Il fatto che il membro destro dell'uguaglianza sia incluso in quello sinistro è ovvio.\\
+ Viceversa, se} $\got{f\in Isom(V,\phi)}$ \Got{ e } $\got{f(0)=v}$, \Got{allora se } $\got{\tau_{-v}}\circ\got{ f,\; g\in Isom(V,\phi)}$ \Got{e}
+ $\got{g(0)=0}$. \Got{Dunque, per un teorema visto,} $\got{g\in O(V,\phi)}$, \Got{e pertanto} $\got{f=\tau_v}\circ\got{ g}$.
+ 
+ \GOT{Corollario: }\Got{}$\got{Isom(V,\phi)}$ \Got{è un gruppo di trasformazioni.}
+ 
+ \vspace{0.5cm}
+ 
+ \begin{center}
+	\GOT{Isometrie di} \LARGE$\got{R^n}$
+ \end{center}
+ 
+ \Got{Si consideri adesso come caso particolare} $\got{R^n}$ \Got{dotato del prodotto scalare ordinario.
+ Il teorema precedente allora implica che} $$\got{Isom(R^n)=\{X\mapsto AX+B|A\in O(n),B\in R^n\}}.$$
+ \Got{Pertanto se} $\got{f\in Isom(R^n)}$ \Got{allora} $$\got{Fix(f)=\{X\in R^n|AX+B=X\}=\{X\in R^n|(A-I)X=-B\}},$$
+ \Got{quindi o} $\got{Fix(f)}$ \Got{è vuoto, o è un sottospazio affine di} $\got{R^n}$ \Got{di giacitura}
+ $$\got{\{X\in R^n|(A-I)X=0\}=Fix(A).}$$
+ 
+ \vspace{0.5cm}
+ 
+ \begin{center}
+	\GOT{Simmetrie}
+ \end{center}
+ 
+ $\got{f\in Isom(R^n)}$ \Got{si dice simmetria se} $\got{f^2=id}$. \Got{} $\got{}$ \Got{} $\got{}$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Sia} $\got{f}$ \Got{una simmetria di} $\got{R^n}$ \Got{tale che} $\got{f(X)=AX+B}$, \Got{con} $\got{A\in O(n}$).
+ \Got{Allora:}
+ 
+ \begin{description}
+	\item[\Got{I)}] $\got{A^2=I}$ \Got{(e dunque} $\got{A}$ \Got{è diagonalizzabile) e} $\got{f(B)=AB+B=0}$;
+	\item[\Got{II)}] $\got{\frac{B}{2}\in Fix(f)}$, \Got{e dunque} $\got{Fix(f)=Fix(A)+\frac{B}{2}}$;
+	\item[\Got{III)}] $\got{B}$ \Got{è ortogonale a} $\got{Fix(A)}$.
+ \end{description}
+ 
+ \GOT{Dimostrazione: }\Got{I)} $\got{\forall X\in R^n,  X=f^2(X)=A(AX+B)+B=A^2X+AB+B}$, \Got{e dunque} $\got{A^2=I}$ \Got{e} 
+ $\got{f(B)=AB+B=0}$.
+ \Got{II)} $\got{f(\frac{B}{2})=\frac{AB}{2}+B=\frac{AB+B}{2}+\frac{B}{2}=\frac{B}{2}}$.
+ \Got{III) Poiché} $\got{A^2=I},\quad A$ \Got{è diagonalizzabile con autovalori} $\got{1}$ \Got{e} $\got{-1}$, \Got{pertanto}\\
+ $\got{R^n=V(1,A)\oplus V(-1,A)}$. \Got{Per definizione} $\got{Fix(A)=V(1,A)}$. \Got{Vogliamo dimostrare che} $\got{Fix(A)^{\bot}=V(-1,A)}$.
+ \Got{Se} $\got{x\in V(-1,A)}$ \Got{e} $\got{y\in V(1,A)}$, \Got{allora} $$\got{\langle x,y\rangle=^txy=^t(-Ax)Ay=-^tx^tAAy=-^txy=
+ -\langle x,y\rangle},$$ \Got{pertanto} $\got{\langle x,y\rangle=0}.$
+ \Got{Dunque} $\got{V(-1,A)\subseteq Fix(A)}$. \Got{Ma entrambi hanno dimensione}\\
+ $\got{n-dim(V(1,A))}$, \Got{dunque coincidono.
+ Ma per il punto I} $\got{B\in V(-1,A)}$.
+ 
+ \vspace{0.5cm}
+ 
+ \begin{center}
+	\GOT{Riflessioni}
+ \end{center}
+ 
+ $\got{f\in Isom(R^n)}$ \Got{viene detta riflessione se} $\got{f^2=id}$ \Got{e} $\got{Fix(f)}$ 
+ \Got{è un iperpiano affine (ossia se ha dimensione} $\got{n-1}$).
+ 
+ \GOT{Osservazione: }\Got{Se} $\got{f(X)=AX+B}$ \Got{è una riflessione,} $\got{dim(Fix(f))=n-1}$, \Got{per cui}\\
+ $\got{A\in O(n)}$ \Got{induce una riflessione lineare rispetto alla giacitura di} $\got{Fix(f)}$. \Got{In particolare} $\got{det\,A=-1}$. 
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Esercizio: }\Got{In} $\got{R^2}$ \Got{siano} $\got{r_1}$ \Got{e} $\got{r_2}$ \Got{due rette passanti per l'origine. Sia} $\got{\alpha}$
+ \Got{l'angolo (considerato in senso antiorario) tra} $\got{r_1}$ \Got{e} $\got{r_2}$. \Got{Siano} $\got{\rho_1}$ \Got{e} $\got{\rho_2}$
+ \Got{le riflessioni del piano di assi rispettivamente} $\got{r_1}$ \Got{e} $\got{r_2}$.
+ \Got{Si dimostri che} $\got{\rho_2}\circ\got{\rho_1}$ \Got{è la rotazione antioraria del piano avente come centro l'origine e di angolo} 
+ $\got{2\alpha}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Esercizio: }\Got{Studiare la composizione di due riflessioni distinte di} $\got{R^n}$.
+ 
+ \GOT{Soluzione: }\Got{Siano} $\got{\rho_1(X)=A_1X+B_1}$ \Got{e} $\got{\rho_2(X)=A_2X+B_2}$, $\got{Fix(\rho_1)=H_1}$ \Got{e}\\
+ $\got{Fix(\rho_2)=H_2}$. 
+ \Got{Sappiamo che} $\got{A_1^2=A_2^2=I}$ \Got{e} $\got{A_1B_1+B_1=A_2B_2+B_2=0}$.
+ 
+ \GOT{I caso: }\Got{}$\got{H_1}$ \Got{e} $\got{H_2}$ \Got{sono paralleli (ossia hanno la stessa giacitura).
+ Allora} $\got{Fix(A_1)=Fix(A_2)}$. \Got{Pertanto} $\got{A_1}$ \Got{e} $\got{A_2}$ \Got{inducono una riflessione rispetto allo stesso piano.
+ Dunque} $\got{A_1=A_2=A}$.
+ \Got{Ma allora} $\got{(\rho_2}\circ\got{\rho_1)(X)=A(AX+B_1)+B_2=A^2X+AB_1+B_2=X+(AB_1+B_2)=}$\\
+ $\got{=X+(B_2-B_1)}$
+ \Got{Di conseguenza} $\got{\rho_2}\circ\got{\rho_1}$ \Got{è una traslazione di} $\got{B_2-B_1}$, \Got{che è il doppio della distanza tra}
+ $\got{H_1}$ \Got{e} $\got{H_2}$.
+ 
+ \GOT{II caso: }\Got{}$\got{H_1}$ \Got{e} $\got{H_2}$ \Got{non sono paralleli.}
+ \Got{In tal caso} $\got{H_1\cap H_2}$ \Got{è un sottospazio affine di dimensione} $\got{n-2}$.
+ \Got{Ma} $\got{H_1\cap H_2\subseteq Fix(\rho_1}\circ\got{\rho_2)}$.
+ \Got{Inoltre la giacitura di} $\got{Fix(\rho_2}\circ\got{\rho_1)}$ \Got{è} $\got{Fix(A_2A_1)=V(1,A_2A_1)}$.
+ \Got{Allora} $\got{L=V(1,A_2A_1)^{\bot}=V(-1,A_2A_1)}$ \Got{è invariante per} $\got{A_2A_1}$.
+ \Got{Pertanto tutti i piani ortogonali a} $\got{H_1\cap H_2}$ \Got{(che hanno giacitura} $\got{L}$) \Got{sono invarianti per}
+ $\got{\rho_2}\circ\got{\rho_1}$.
+ \Got{Per l'esercizio precedente su tali piani} $\got{\rho_2}\circ\got{\rho_1}$ \Got{è composizione di riflessioni rispetto a rette incidenti,
+ dunque è una rotazione.}
+
+ \vspace{0.5cm}
+ 
+ \GOT{Esercizio (Forma canonica per le simmetrie): }\Got{Dimostrare che se} $\got{f\in Isom(R^n)}$ \Got{è una simmetria e}
+ $\got{k=dim(Fix(f)),}$ \Got{allora esiste una base ortonormale} $\got{B=\{v_1,\ldots,v_n\}}$ \Got{di} $\got{R^n}$ \Got{rispetto alla quale}
+ $\got{f}$ \Got{si scrive come}
+ $$\got{f(X)}=\left(
+ \begin{array}{cc}
+  \got{I_k} & \got{0}\\
+  \got{0} & \got{I_{n-k}}
+ \end{array}
+ \right)
+ \got{X+\alpha v_n}.
+ $$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Teorema: }\Got{Ogni} $\got{f\in Isom(R^n)}$ \Got{è composizione di al più} $\got{n+1}$ \Got{riflessioni}
+ 
+ \GOT{Dimostrazione: }\Got{Se} $\got{f(0)=0}$, \Got{allora} $\got{f\in O(n)}$, \Got{dunque è composizione di al più} $\got{n}$ 
+ \Got{riflessioni.
+ Se} $\got{f(0)=B\ne 0}$, \Got{sia} $\got{H=\{X\in R^n|\;d(X,0)=d(X,B)\}}$.
+ $\got{H}$ \Got{è un iperpiano. Infatti} $\quad\got{x\in H\Longleftrightarrow ||x||^2=||x-B||^2\Longleftrightarrow\langle x,x\rangle=
+ \langle x-B,x-B\rangle\Longleftrightarrow}\\
+ \got{\Longleftrightarrow\langle B,B\rangle-2\langle B,X\rangle=0}$, 
+ \Got{equazione che definisce un piano. Inoltre, poiché} $\got{\frac{B}{2}\in H}$, \Got{la giacitura di} $\got{H}$ \Got{è} 
+ $\got{Span(B)^{\bot}}$.
+ \Got{Sia} $\got{\rho_H}$ \Got{la riflessione rispetto all'iperpiano} $\got{H}$.
+ \Got{Allora}
+ 
+ \[ \left\{
+ \begin{array}{l}
+  \got{\rho_H}\circ\got{ f\in Isom(R^n)} \\
+  \got{(\rho_H}\circ\got{ f)(0)=\rho_H(B)=0}
+ \end{array}
+ \right.
+ \Longrightarrow \got{\rho_H}\circ\got{ f\in O(n)\Longrightarrow \rho_H}\circ\got{ f}
+ \]
+ 
+ \Got{è composizione di al più} $\got{n}$ \Got{riflessioni, dunque} $\got{f=\rho_h}\circ\got{(\rho_H}\circ\got{ f)}$
+ \Got{è composizione di al più} $\got{n+1}$ \Got{riflessioni}.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Un' isometria si dice diretta se è composizione di un numero pari di riflessioni, si dice inversa se
+ è composizione di un numero dispari di riflessioni. Se} $\got{f(X)=AX+B,\quad f}$ \Got{è diretta se} $\got{det\; A=1}$,
+ \Got{è inversa se} $\got{det\; A=-1}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Se} $\got{f\in Isom(R^n)}$ \Got{ha almeno un punto fisso, è composizione di al più} $\got{n}$ \Got{riflessioni}.
+ 
+ \GOT{Dimostrazione: }\Got{Sia} $\got{f(0)=B\ne 0}$ \Got{(se} $\got{f(0)=0}$ \Got{il la tesi è manifesta) e sia} $\got{Q\in R^n}$
+ \Got{tale che} $\got{f(Q)=Q}$. \Got{Sia inoltre} $\got{H}$ \Got{definito come nella dimostrazione precedente.
+ Allora come prima} $\got{\rho_H}\circ\got{ f\in O(n)}$, \Got{e poiché} $\got{d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H}$, \Got{e pertanto}\\
+ $\got{(\rho_h}\circ\got{ f)(Q)=Q}$.
+ \Got{Perciò} $\got{dim(Fix(\rho_H}\circ\got{ f))\ge 1}$, \Got{e di conseguenza} $\got{\rho_h}\circ\got{ f}$ \Got{è composizione di al più} $\got{n-1}$
+ \Got{riflessioni.
+ Dunque} $\got{f}$ \Got{è composizione di al più} $\got{n}$ \Got{riflessioni.}
+ 
+ \vspace{0.5cm}
+ 
+ \begin{center}
+	\GOT{Classificazione delle isometrie di} $\got{R^2}$
+ \end{center}
+ 
+ \Got{Alcuni esempi di isometrie di} $\got{R^2}$ \Got{sono:}
+ \begin{itemize}
+	\item \Got{traslazioni;}
+	\item \Got{rotazioni;}
+	\item \Got{riflessioni;}
+	\item \Got{composizioni delle precedenti.}
+ \end{itemize}
+ 
+ \GOT{Definizione: }\Got{Si chiama glissoriflessione (o riflessione rotatoria) la composizione di una riflessione con una traslazione parallela
+ all'asse della riflessione.}
+ 
+ \GOT{Osservazione: }\Got{La glissoriflessione è un'isometria inversa senza punti fissi.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Teorema di classificazione delle isometrie piane: }\Got{Ogni isometria di} $\got{R^2}$ \Got{è di uno dei seguenti tipi:}
+ \begin{description}
+  \item[\Got{I)}] \Got{traslazione (isometria diretta senza punti fissi)};
+  \item[\Got{II)}] \Got{rotazione (isometria diretta con punti fissi)};
+  \item[\Got{III)}] \Got{riflessione (isometria inversa con punti fissi)};
+  \item[\Got{IV)}] \Got{glissoriflessione (isometria inversa senza punti fissi).}
+ \end{description} 
+ \GOT{Dimostrazione: }\Got{Sia} $\got{f\in Isom(R^2)}$. \Got{Allora} $\got{f}$ \Got{è composizione di} $\got{k}$ \Got{riflessioni, con}
+ $\got{k\le 3}$.
+ \Got{Se} $\got{k=0,\; f}$ \Got{è l'identità.
+ Se} $\got{k=1,\; f}$ \Got{è una riflessione.
+ Se} $\got{k=2}$, \Got{come abbiamo già visto} $\got{f}$ \Got{è una traslazione od una rotazione.
+ Se} $\got{k=3,\; f=\rho_1}\circ\got{\rho_2}\circ\got{\rho_3}$. \Got{Sia} $\got{r_i=Fix(\rho_i)}$ \Got{(con} $\got{i=1,2,3}$).
+ $\got{\rho_1}\circ\got{\rho_2}$ \Got{può essere una traslazione od una rotazione.}
+ 
+ \GOT{I caso: }\Got{}$\got{\rho_1}\circ\got{\rho_2=\tau_v}$ \Got{è una traslazione.
+ Allora sia} $\got{v=v_1+v_2}$, \Got{con} $\got{v_1//r_3}$ \Got{e} $\got{v_2\bot r_3}$.
+ \Got{Quindi} $\got{f=\tau_v}\circ\got{\rho_3=\tau_{v_1}}\circ\got{(\tau_{v_2}}\circ\got{\rho_3)}$. \Got{Ma} $\got{\tau_{v_2}}\circ\got{\rho_3}$ \Got{è una riflessione}
+ $\got{\rho'_3}$ \Got{rispetto ad un asse} $\got{r'_3}$ \Got{parallelo a} $\got{r_3}$.
+ \Got{Dunque} $\got{f=\tau_{v_1}}\circ\got{\rho'_3}$, \Got{che è una glissoriflessione se} $\got{v_1\ne 0}$, \Got{è una riflessione se} 
+ $\got{v_1=0}$.
+ 
+ \GOT{II caso: }\Got{}$\got{\rho_1}\circ\got{\rho_2}$ \Got{è una rotazione rispetto ad un punto} $\got{P}$ \Got{di angolo} $\got{\alpha}$.
+ \Got{Vanno distinti due ulteriori sottocasi:}
+ \begin{itemize}
+  \item $\got{P\notin r_3}$. \Got{In tal caso la rotazione} $\got{R=\rho_1}\circ\got{\rho_2}$ \Got{è composizione di due riflessioni} $\got{\rho'_1}$
+  \Got{e} $\got{\rho'_2}$, \Got{rispetto a rette} $\got{r'_1}$ \Got{e} $\got{r'_2}$ \Got{incidenti in} $\got{P}$,
+  \Got{che formano un angolo di} $\got{\frac{\alpha}{2}}$ \Got{e con} $\got{r'_2}$ \Got{parallela a} $\got{r'_3}$.
+  \Got{Allora} $\got{f=\rho_1}\circ\got{\rho_2}\circ\got{\rho_3=\rho'_1}\circ\got{\rho'_2}\circ\got{\rho_3}$. \Got{Ma} $\got{\rho'_2}\circ\got{\rho_3}$
+  \Got{è una traslazione, dunque} $\got{f}$ \Got{è una glissoriflessione}.
+  \item $\got{\got{P\in r_3}}$ \Got{(ossia} $\got{r_1,\; r_2}$ \Got{e} $\got{r_3}$ \Got{sono incidenti). Allora si può scrivere}
+  $\got{\rho_1}\circ\got{\rho_2}$ \Got{come} $\got{\rho'_1}\circ\got{\rho_3}$, \Got{dove} $\got{\rho'_1}$ \Got{è la riflessione rispetto ad un
+  opportuno asse passante per} $\got{P}$.
+  \Got{Allora} $$\got{f=\rho_1}\circ\got{\rho_2}\circ\got{\rho_3=\rho'_1}\circ\got{\rho_3}\circ\got{\rho_3=\rho'_1,}$$ \Got{e dunque} $\got{f}$ \Got{è una rotazione.} 
+ \end{itemize}
+ \GOT{Osservazione: }\Got{}$\got{\rho_1}\circ\got{\rho_2}\circ\got{\rho_3}$ \Got{è una riflessione se e solo se i tre assi di riflessione sono paralleli
+ o incidenti.}
+ 
+ \begin{center}
+  \GOT{Classificazione delle isometrie di} $\got{R^3}$
+ \end{center}
+ \Got{Alcuni esempi di isometrie di} $\got{R^3}$ \Got{sono:}
+ \begin{itemize}
+  \item \Got{traslazioni (luogo dei punti fissi:} $\got{\emptyset}$);
+  \item \Got{riflessioni (luogo dei punti fissi: un piano);}
+  \item \Got{rotazioni (luogo dei punti fissi: una retta).}
+ \end{itemize}
+ \GOT{Osservazione: }\Got{La composizione di tre riflessioni rispetto a tre piani distinti incidenti in un punto (ma non in una retta)
+ è la simmetria rispetto a quel punto.
+ In generale due isometrie elementari (traslazioni, riflessioni, rotazioni) non commutano, fuorché in alcuni casi particolari,
+ cui si danno dei nomi:}
+ \begin{description}
+  \item[\Got{I)}]  \Got{si chiama glissorotazione la composizione di una riflessione e di una traslazione parallela al piano di riflessione;}
+  \item[\Got{II)}] \Got{si chiama riflessione rotatoria la composizione di una riflessione e di una rotazione intorno ad una retta ortogonale
+  al piano di riflessione (un caso particolare sono le simmetrie centrali);}
+  \item[\Got{III)}] \Got{si chiama avvitamento la composizione di una rotazione e di una traslazione parallela alla retta intorno a cui
+  avviene la rotazione.}
+ \end{description}
+ \GOT{Teorema: }\Got{Tutte le isometrie di} $\got{R^3}$ \Got{sono traslazioni, riflessioni, rotazioni, glissorotazioni, riflessioni rotatorie
+ o avvitamenti.}
+ 
+ \begin{center}
+  \GOT{Il gruppo di trasformazioni} $\got{A(V)}$
+ \end{center}
+ \Got{Dato uno spazio vettoriale} $\got{V}$ \Got{si definisce} $\got{A(V)=\{\tau_v}\circ\got{ f\;|\; v\in V,\; f\in GL(V)\}}$.
+ \Got{È stato già visto che} $\got{A(V)}$ \Got{è un gruppo di trasformazioni, e che coincide con il sottogruppo di} $\got{S(V)}$
+ \Got{generato da} $\got{T(V)}$ \Got{e da} $\got{GL(V)}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Dati un gruppo di trasformazioni} $\got{G}$ \Got{di un insieme} $\got{X}$ \Got{e un elemento} $\got{x}$ \Got{di}
+ $\got{X}$ \Got{si chiama stabilizzatore di} $\got{x}$ \Got{l'insieme} $\got{St_x(G)=\{g\in G\;|\; g(x)=x\}}$.
+ 
+ \vspace{0.5cm}
+ 
+ \begin{tabular}{ll}
+	\GOT{Proposizione:} & \Got{I) Se} $\got{|V|>2}$ \Got{allora} $\got{St_v(GL(V))=GL(V)}$ \Got{se e solo se} $\got{v=0}$.\\
+	& \Got{II)} $\got{\forall v\in V\quad St_v(A(G))\cong GL(V)}$.
+ \end{tabular}
+ 
+ \GOT{Dimostrazione: }\Got{I) Ovviamente} $\got{St_0(GL(V))=GL(V)}.$
+ \Got{D'altra parte se} $\got{v\ne 0}$ \Got{allora è banale trovare una funzione} $\got{f\in GL(V)}$ \Got{tale che} $\got{f(v)\ne v.}$
+ 
+ \Got{II) Innanzitutto} $\got{\forall v,w\in V\;\; St_v(A(V))}$ \Got{e} $\got{St_w(A(V))}$ \Got{sono isomorfi.
+ Infatti se}\\
+ $\got{u=v-w}$ \Got{(sicché} $\got{\tau_u(w)=v)}$
+ \begin{eqnarray*}
+	\got{St_v(A(V))} &\to & \got{St_w(A(V))} \\
+	\got{f} &\mapsto & \got{\tau_{-u}}\circ\got{ f}\circ\got{\tau_u}
+ \end{eqnarray*}
+ 
+ \Got{è un isomorfismo.
+ Inoltre} $\got{\tau_v}\circ\got{ f\in St_0(A(V))}$ \Got{se e solo se} $\got{(\tau_v}\circ\got{ f)(0)=0,}$ \Got{cioè se e solo se} $\got{v=0}$,
+ \Got{dunque} $\got{St_0(A(V))=GL(V)}$.
+ \Got{Pertanto} $$\got{\forall v\in V\quad St_v(A(V))\cong St_0(A(V))=GL(V)}.$$
+ 
+ 
+ 
+ \Got{Informalmente si può dire che in} $\got{V}$ \Got{c'è un punto privilegiato, l'origine, mentre in} $\got{A(V)}$
+ \Got{tutti i punti sono equivalenti.
+ Rileggendo la dimostrazione si può notare che ad ogni coppia di vettori} $\got{v,w\in V}$ \Got{si è associata una traslazione}
+ $\got{\tau_{v-w}}$, \Got{e le traslazioni costituiscono un gruppo isomorfo a} $\got{(V,+)}$.
+ \Got{Grazie alla definizione di spazio affine si distingueranno gli elementi di} $\got{V}$ \Got{pensati come punti o come traslazioni.}
+ 
+ \begin{center}
+	\GOT{Spazi affini}
+ \end{center}
+ 
+ \Got{Dato uno spazio vettoriale} $\got{V}$, \Got{un insieme non vuoto} $\got{A}$ \Got{si dice spazio affine su} $\got{V}$
+ \Got{se esiste una funzione} $\got{F:A\times A\to V}$ \Got{che associa ad ogni coppia di punti} $\got{P,Q\in V}$ \Got{un vettore di} $\got{V}$,
+ \Got{denotato} $\overrightarrow{\got{PQ}}$, \Got{in modo da verificare le seguenti condizioni:}
+ \begin{description}
+	\item[\Got{I)}] $\got{\forall P\in A,\forall v\in V\;\;\exists!\; Q\in A}$ \Got{tale che} $\overrightarrow{\got{PQ}}=\got{v}$;
+	\item[\Got{II)}] $\got{\forall P,Q,R\in A}\quad\overrightarrow{\got{PQ}}+\overrightarrow{\got{QR}}=\overrightarrow{\got{PR}}\;\;$
+		\Got{(relazione di Chasles)}.
+ \end{description}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: }\Got{Dalla relazione di Chasles discende che:} 
+ \begin{description}
+	\item[\Got{a)}] $\got{\forall P\in A}\quad\overrightarrow{\got{PP}}=\got{0}\quad$ \Got{(prendendo} $\got{P=Q=R);}$
+	\item[\Got{b)}] $\got{\forall P,Q\in A}\quad\overrightarrow{\got{PQ}}=-\overrightarrow{\got{PQ}}\quad$ \Got{(prendendo} $\got{P=R).}$
+ \end{description}
+ 
+ \GOT{Esempi: }\Got{I)} $\got{A=V}$,
+ \begin{eqnarray*}
+	\got{F:} \got{V}\times \got{V} & \to & \got{V} \\
+	\got{(P,Q)} & \mapsto & \vet{PQ}\stackrel{\got{def}}{=}\got{Q-P}
+ \end{eqnarray*}
+ 
+ \Got{II) Data} $\got{f\in Hom(V,W)}$ \Got{e dato} $\got{b\in W}$ \Got{siano} $\got{A=f^{-1}(b)}$ \Got{e} $\got{V=f^{-1}(0)=ker(f)}$.
+ \Got{Allora} $\got{A}$ \Got{è uno spazio affine su} $\got{V}$ \Got{tramite}
+ \begin{eqnarray*}
+  \got{F:} \got{A\times A} & \to & \got{V} \\
+  \got{(a_1,a_2)} & \mapsto & \vet{a_1a_2}\stackrel{\got{def}}{=}\got{a_2-a_1}
+ \end{eqnarray*}
+ 
+ \begin{center}
+	\GOT{Traslazioni}
+ \end{center}
+ 
+ \Got{Dalla definizione, fissato} $\got{v\in V,\;\exists !Q\in A}$ \Got{tale che} $\got{\vet{PQ}=\got{v}}$.
+ \Got{Si definisce allora traslazione ogni funzione} $\got{\tau_v:A\to A}$ \Got{tale che} $\got{\tau_v(P)=Q,}$ \Got{dove} $\vet{PQ}=\got{v}$.
+ \Got{Inoltre si usa la notazione} $\got{P+v=\tau_v(P)}$.
+ \Got{Con tale notazione si ha che:}
+ \begin{itemize}
+	\item $\vet{P(P+v)}=\got {v}$;
+	\item $\got{P}+\vet{PQ}=\got{Q}$.
+ \end{itemize}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Lemma: }\Got{}$\got{\forall P\in A,\; \forall v_1,v_2\in V}$ \Got{si ha che} $\got{(P+v_1)+v_2=P+(v_1+v_2).}$
+ 
+ \GOT{Dimostrazione: }\Got{Siano} $\got{P_1=P+v_1}$ \Got{e} $\got{P_2=P+v_2}$. \Got{Allora} $\got{v_1=\vet{PP_1}}$ \Got{e}
+ $\got{v_2=\vet{PP_2}.}$.
+ \Got{Perciò si ha che} $\got{P+(v_1+v_2)=P+(\vet{PP_1}+\vet{PP_2})=P+\vet{PP_2}=P_2}$.
+ 
+ \vspace{0.5cm}
+ 
+ \begin{center}
+	\GOT{Combinazioni affini}
+ \end{center}
+ 
+ \Got{Fissato} $\got{P\in A}$, \Got{si definisce}
+ \begin{eqnarray*}
+  \got{F_P:} \got{A} & \to & \got{V} \\
+  \got{Q} & \mapsto & \vet{PQ}
+ \end{eqnarray*}
+ 
+ \Got{Dagli assiomi segue che} $\got{F_P}$ \Got{è biunivoca e che} $\got{F_P(P)=\vet{PP}=0}$. \Got{Dunque} $\got{F_P}$ \Got{trasforma}
+ $\got{P}$ \Got{nell'origine di} $\got{V}$.
+ \Got{Dunque si vorrebbe trovare una definizione di ``combinazione affine'' di punti di} $\got{A}$ \Got{che corrisponda alla combinazione
+ lineare di vettori. Siano} $\got{P_1,P_2,\ldots,P_k\in A}$. \Got{Per ogni} $\got{P\in A\; F_P:}$ \Got{trasforma}
+ $\got{P_i}$ \Got{in} $\vet{PP_i}$.
+ \Got{Dati} $\got{t_1,\ldots,t_k\in K}$ \Got{esiste} $\got{\sum_{i=1}^kt_i\vet{PP_i}\in V}$, \Got{e dunque anche}
+ $\got{F_P^{-1}(\sum_{i=1}^kt_i\vet{PP_i})\in A}$.
+ \Got{Affinché il risultato sia indipendente da} $\got{P,}$ \Got{deve valere che}
+ $$\got{\forall P,Q\in A\quad P+\sum_{i=1}^kt_i\vet{PP_i}=Q+\sum_{i=1}^kt_i\vet{QP_i},}$$
+ \Got{il che accade se}
+ $$\got{P+\sum_{i=1}^kt_i\vet{PP_i}=P+\sum_{i=1}^kt_i(\vet{PQ}+\vet{QP_i})=P+\left(\sum_{i=1}^kt_i\right)\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i}}$$
+ \Got{è uguale a}
+ $$\got{Q+\sum_{i=1}^kt_i\vet{QP_i}=P+\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i},}$$
+ \Got{ossia se e solo se} $\got{\sum_{i=1}^kt_i=1}$.
+ \Got{Da ciò discende la seguente definizione.}
+ 
+ \GOT{Definizione: }\Got{Dati} $\got{P_1,\ldots,P_k\in A}$ \Got{e} $\got{t_1,\ldots,t_k\in K}$ \Got{con} $\got{\sum_{i=1}^kt_i=1}$,
+ \Got{si chiama combinazione affine di} $\got{P_1,\ldots,P_k}$, \Got{dato un qualsiasi} $\got{P\in A}$, 
+ $\got{F_P^{-1}(\sum_{i=1}^kt_i\vet{PP_i})}$.
+ \Got{Si definisce inoltre} $\got{comb_a(P_1,\ldots,P_n)=\{combinazioni\; affini\; di\; K\}}.$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Esempio: }\Got{Se} $\got{A=K^n}$ \Got{e} $\got{P_1,P_2}$ \Got{sono punti distinti, allora}
+ \begin{eqnarray*}
+	\got{comb_a(P_1,P_2)=\{t_1P_1+t_2P_2\;|\;t_1+t_2=1\}=\{tP_1+(1-t)P_2\;|\; t\in K\}=}\\
+	\got{=\{P_1+(1-t)(P_2-P_1)\;|\; t\in K\},}
+ \end{eqnarray*}
+
+ \Got{che è la retta passante per} $\got{P_1}$ \Got{e} $\got{P_2.}$ \Got{Analogamente la combinazione affine di tre punti non allineati
+ è il piano passante per essi.}
+ 
+ \begin{center}
+	\GOT{Sottospazi affini}
+ \end{center}
+ 
+ \Got{Un sottoinsieme} $\got{H}$ \Got{di} $\got{A}$ \Got{si dice sottospazio affine se è chiuso per combinazioni affini.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: }\Got{L'intersezione di sottospazi affini è un sottospazio affine.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Esempio: }\Got{Sia} $\got{P\in A}$, \Got{e sia} $\got{W}$ \Got{un sottospazio di} $\got{V.}$ \Got{Allora}
+ $$\got{F^{-1}_{P_0}(W)=\{P\in A\;|\;}\vet{P_0P}\got{\in W\}=\{P\in V\;|\;P=P_0+w, w\in W\}}.$$
+ \Got{Dunque} $\got{F^{-1}_{P_0}(P_0+W)=W}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: }\Got{}$\got{P_0+W=\{\tau_w(P_0)\;|\;w\in W\}}$. 
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{}$\got{P_0+W}$ \Got{è chiuso per combinazioni affini.}
+ 
+ \GOT{Dimostrazione: }\Got{Siano} $\got{P_0+w_1,\dots,P_0+w_n\in P_0+W}$ \Got{e} $\got{t_1+\ldots+t_n=1}$. \Got{Allora}
+ 
+ \[
+	\got{\sum_{i=1}^nt_i(P_0+w_i)=P_0+\sum_{i=1}^nt_i\vet{P_0(P_0+w_i)}=P_0+\sum_{i=1}^nt_iw_i\in P_0+W}.
+ \]
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Sia} $\got{H}$ \Got{un sottospazio affine di} $\got{A}$. \Got{Allora esiste un unico sottospazio vettoriale}
+ $\got{W_H}$ \Got{di} $\got{V}$, \Got{ detto giacitura di} $\got{H}$, \Got{tale che} $\got{\forall P\in H\quad H=P_0+W_H}$.
+ 
+ \GOT{Dimostrazione: }\Got{Dato} $\got{P_0\in H}$, \Got{si cerca} $\got{W_H}$ \Got{tale che verifichi la tesi.\\
+ Poiché} $\got{P_0+W_H=F^{-1}_{P_0}(W_H)}$, \Got{necessariamente}
+ $$
+	\got{W_H=F_{P_0}(H)=\{w\in V\;|\; P_0+w\in H\}}.
+ $$
+ \Got{Bisogna verificare che} $\got{W_H}$ \Got{sia un sottospazio di} $\got{V.}$
+ \Got{Dati} $\got{w_1,w_2\in W_H}$ \Got{e} $\got{\alpha_1,\alpha_2\in K,}$ \Got{si ha che} $\got{P_0+w_1\in H}$ \Got{e che}
+ $\got{P_0+w_2\in H}$. \Got{Ma allora}
+ \begin{eqnarray*}
+	\got{P_0+\alpha_1w_1+\alpha_2w_2=P_0+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}=}\\
+	\got{=P_0+(1-\alpha_1-\alpha_2)\vet{P_0P_0}+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}=}\\
+	\got{=F^{-1}_{P_0}((1-\alpha_1-\alpha_2)\vet{P_0P_0}+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}\in H}
+ \end{eqnarray*}
+
+ \Got{in quanto combinazione affine di} $\got{P_0,P_0+w_1}$ \Got{e} $\got{P_0+w_2\in W_H}$.
+ \Got{Quanto all'unicità, bisogna verificare che il ragionamento fatto non dipenda dall'elemento di} $\got{H}$ \Got{scelto, ossia che dati}
+ $\got{P_1,P_2\in H}$ \Got{valga che} $\got{F_{P_1}(H)=F_{P_2}(H)}$.
+ \Got{Ma} $\got{F_{P_1}(H)=\{\vet{P_1Q}\;|\; Q\in H\},}$ \Got{e se} $\got{\vet{P_1Q}\in F_{P_1}(H)}$ \Got{si ha che}
+ $$\got{\vet{P_1Q}=\vet{P_1P_2}+\vet{P_2Q}=-\vet{P_2P_1}+\vet{P_2Q}\in F_{P_2}(H),}$$
+ \Got{pertanto} $\got{F_{P_1}(H)\in F_{P_2}(H)}$, \Got{ed analogamente si dimostra l'inclusione inversa.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Se} $\got{H\subseteq A}$ \Got{è sottospazio affine, si pone} $\got{dim\;H=dim\;W_{H}}$.
+ \begin{itemize}
+	\item $\got{H}$ \Got{è detto retta se} $\got{dim\;H = 1}$,
+	\item $\got{H}$ \Got{è detto piano se} $\got{dim\;H = 2}$,
+	\item $\got{H}$ \Got{è detto iperpiano se} $\got{dim\;H = dim\;A-1}$.
+ \end{itemize}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: }$\got{H, L \subseteq A,\ H\cap L \neq \emptyset}$ \Got{sottospazi affini, allora} $\got{W_{H\cap L}=W_H\cap W_L}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Due sottospazi affini si dicono:}
+ \begin{description}
+	\item[\Got{incidenti}] \Got{se} $\got{H\cap L \neq 0}$,
+	\item[\Got{paralleli}] \Got{se} $\got{W_H\subseteq W_L\ \vee\ W_L\subseteq W_H}$.
+ \end{description}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione: } \Got{il parallelismo non è una relazione transitiva in generale, quindi neanche d'equivalenza.}
+ 
+ \vspace{0.5cm}
+
+ \GOT{Proposizione: } \Got{Dati} $\got{P_0,\dots,P_k}$,
+ \[
+	\got{comb_a(P_0,\dots,P_k)= P_0+Span}(\vet{P_0P_1},\dots,\vet{P_0P_k}).
+ \]
+ 
+ \GOT{Dimostrazione: } \Got{Per definizione di combinazione affine vale} $\got{\subseteq}$. \Got{Per il} $\got{\supseteq}$ \Got{si ha}
+ \[
+	\got{P_0+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k} 
+		=P_0+\left(1-\sum_{i=1}^{k}t_i\right)+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k}},
+ \]
+ \Got{che sta in} $\got{comb_a(P_0,\dots,P_k)}$, $\got{\forall t_1,\dots,t_k\in K}.$
+ 
+ \Got{Più in generale, ponendo} $\got{comb_a(X)}$ \Got{l'insieme di combinazioni affini di tutti i possibili sottoinsiemi finiti di} $\got{X}$
+ \Got{si ottiene l'analogo della proposizione appena dimostrata.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Notazione: }\Got{poniamo} $\got{H+L = comb_a(H\cup L)}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione (Giacitura di $\got{H+L}$): }\Got{} $\got{H,L\subseteq A}$ \Got{sottospazi affini,} $\got{\forall P\in H, Q \in L}$
+ \[
+	\got{W_{H+L}=W_H+W_L+Span(\vet{PQ})}.
+ \]
+
+ \GOT{Dimostrazione: } \Got{} $\got{H\subseteq H+L \Rightarrow W_H \subseteq W_{H+L}}$, $\got{W_L \subseteq W_{H+L}}$ \Got{, inoltre si ha che}
+ $\got{comb_a(P,Q)\subseteq H+L \Rightarrow W_{\vet{PQ}}\subseteq W_{H+L}}$; \Got{quindi abbiamo l'inclusione}
+ \[
+	\got{W_{H+L}\supseteq W_H+W_L+Span(\vet{PQ})}.
+ \]
+ \Got{Sia ora} $\got{S=P+W_H+W_L+Span(\vet{PQ})}$. \Got{Si ha che} $\got{S\supseteq P+W_H = H}$; \Got{e, poiché} $\got{Q= P+ \vet{PQ}\in S}$,
+ $\got{L=Q+W_L \subseteq Q+W_H+W_L+Span(\vet{PQ})=S}$. \Got{Ciò significa che} $\got{S\supseteq H+L}$ \Got{per definizione di combinazione affine.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Lemma: } \Got{} $\got{H,L\subseteq A}$ \Got{sottospazi affini, allora vale che}
+ \[
+	\got{H\cap L = \emptyset\quad \Leftrightarrow\quad \forall P\in H, Q \in L,\ \vet{PQ}\notin W_H+W_L.}
+ \]
+ 
+ \GOT{Dimostrazione: } \Got{Per assurdo. Se} $\got{\exists P\in H, Q\in L:\ \vet{PQ}=w_1+w_2}$ \Got{in modo che} $\got{w_1\in W_H, w_2\in W_L}$, si ha
+ $\got{H \ni P+w_1 = P+(\vet{PQ}-w_2) = Q - w_2 \in L.}$
+ 
+ \Got{viceversa, se} $\got{\exists R \in H \cap L}$, \Got{presi} $\got{P\in H, Q \in L}$ \Got{si ha che} $\got{H=P+W_H,L=Q+W_L}$ \Got{quindi}
+ $\got{\vet{PQ}=\vet{PR}+\vet{RQ}\in W_H+W_L}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione (Formula di Gra\ss mann affine): } \Got{Dati} $\got{H,L\subseteq A}$ \Got{sottospazi affini si ha che}
+ \begin{description}
+	\item[\GOT{I)}] $\got{H\cap L \neq \emptyset, \ dim\;(H+L)=dim\;H+dim\;L-dim\;(H\cap L)+1}$;\label{GrassAffnote}
+	\item[\GOT{II)}] $\got{H\cap L = \emptyset, \ dim\;{H+L}=dim\;H+dim\;L+1}$.\label{GrassAffemp}
+ \end{description}
+ 
+ \GOT{Dimostrazione: }\Got{} $\got{dim\;(H+L)= dim\;W_{H+L}}$, $\got{W_{H+L}=W_H+W_L+Span(\vet{PQ})},$ \Got{quindi si ha che }
+ \begin{description}
+	\item[\ref{GrassAffnote}] \Got{per il lemma otteniamo che} $\got{\vet{PQ}\in W_H+W_L}$ \Got{cioè} $\got{W_{H+L}=W_L+W_H}$
+		\Got{da cui la tesi discende da Gra\ss mann vettoriale;}
+	\item[\ref{GrassAffemp}] \Got{in questo caso} $\got{\vet{PQ}\notin W_H+W_L}$ \Got{allora} $\got{dim\;W_{H+L}=dim\;(W_L+W_H)+1}$
+		\Got{e la tesi si ha ancora per Gra\ss mann vettoriale.}
+ \end{description}
+ 
+ \vspace{0.5cm}
+
+ \GOT{Definizione: } \Got{} $\got{H,L}$ \Got{si dicono sghembi se } $\got{H\cap L = \emptyset}$ \Got{e} $\got{W_H \cap W_L = \{0\}}$.
+ 
+ \begin{center}
+	\GOT{Riferimenti affini}
+ \end{center}
+ 
+ \GOT{Definizione: } \Got{Dati i punti} $\got{P_0,\dots, P_k\in A,}$ \Got{questi si dicono affinemente indipendenti se si ha}
+ $\got{dim\;comb_a(P_0,\dots,P_k)=k}$.
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: } \Got{Sia} $\got{n=dim\;A}$. \Got{Ogni} $\got{n+1}$\Got{-upla di punti} $\got{\{P_0,\dots, P_n\}}$
+ \Got{che siano affinemente indipendenti.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Osservazione (passaggio da un riferimento affine a base di vettori): } \Got{Se} $\got{\{P_0,\dots, P_n\}}$ \Got{è un riferimento affine, allora}
+ $\got{\{\vet{P_0P_1},\dots,\vet{P_0P_n}\}}$ \Got{è una base di} $\got{V}$. \Got{Viceversa, se} $\got{\{v_1,\dots,v_n\}}$ \Got{è una base di}
+ $\got{V}$ \Got{e} $\got{P\in A}$ \Got{, allora} $\got{\{P,P+v_1,\dots,P+v_n\}}$ \Got{è un riferimento affine. In particolare se}
+ $\got{A=V=K^n}$, $\got{\{0,e_1,\dots,e_n\}}$ \Got{è detto riferimento affine standard.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: } \Got{Se} $\got{R=\{P_0,\dots,P_k\}}$ \Got{è un riferimento affine di} $\got{A}$, \Got{allora}
+ \[
+	\got{\forall P\in A, \exists ! a_0,\dots,a_n\in K :\ P=a_0P_0+\dots+a_nP_n.}
+ \]
+ \Got{In particolare, la} $\got{n+1}$\Got{-upla} $\got{a_0,\dots,a_n}$ \Got{sono detti coefficienti affini di} $\got{P}$
+ \Got{rispetto a} $\got{R}$.
+ 
+ \GOT{Dimostrazione: } \Got{Per ipotesi,} $\got{A=comb_a(P_0,\dots,P_n)}$ \Got{quindi esistono sicuramente dei coefficienti per ogni}
+ $\got{P\in A}$. \Got{Per mostrare che sono unici, basta spostarsi nello spazio vettoriale}
+ $\got{V}$ \Got{con il procedimento mostrato nella nota precedente.}
+ 
+ \begin{center}
+	\GOT{Trasformazioni affini}
+ \end{center}
+ \Got{Siano} $\got{A}$ \Got{uno spazio affine su} $\got{V}$ \Got{e} $\got{B}$ \Got{uno spazio affine su} $\got{W,}$ \Got{dove} $\got{V}$ \Got{e}
+ $\got{W}$ \Got{sono spazi vettoriali sul campo} $\got{K.}$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Si dice trasformazione affine una funzione} $\got{f:A\to B}$ \Got{che conserva le combinazioni affini.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Una trasformazione affine biunivoca si dice isomorfismo affine.}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Definizione: }\Got{Un isomorfismo affine da uno spazio affine in sé si dice affinità. Si definisce inoltre}
+ $\got{Aff(A)=\{f:A\to A\;|\; f\; \grave{e}\; un'affinit\grave{a}\}.}$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Esempi: }
+ \begin{description}
+  \item[\Got{I)}] \Got{Le traslazioni sono affinità.}
+  \item[\Got{I)}] \Got{Se} $\got{R}$ \Got{è un riferimento affine, la funzione}
+   \begin{eqnarray*}
+  \got{[\quad]_R:A} & \to & \got{K^n} \\
+  \got{P} & \mapsto & \got{[P]_R}
+ \end{eqnarray*}
+  \Got{(dove} $\got{[P]_R}$ \Got{sono le coordinate affini di} $\got{P}$ \Got{rispetto a} $\got{R)}$ \Got{è un isomorfismo affine;
+ esso manda i punti di} $\got{R}$ \Got{in} $\got{0,e_1,\ldots,e_n.}$
+ \end{description}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Se} $\got{V}$ \Got{è uno spazio vettoriale,} $\got{f:V\to V}$ \Got{è un'affinità e} $\got{f(0)=0,}$ \Got{allora}
+ $\got{f}$ \Got{è lineare.}
+ \GOT{Dimostrazione: }\Got{}$\got{\forall v_1,v_2\in V\quad\forall t_1,t_2\in K}$ \Got{vale che:}
+ 
+ \begin{eqnarray*}
+	& \got{f(t_1v_1+t_2v_2)=f((1-t_1-t_2)\cdotp 0+t_1v_1+t_2v_2=}\\
+	& \got{=(1-t_1-t_2)f(0)+t_1f(v_1)+t_2f(v_2)=t_1f(v_1)+t_2f(v_2).}
+ \end{eqnarray*}
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Se} $\got{f\in Aff(v)}$ \Got{allora esistono e sono unici} $\got{v\in V}$ \Got{e} $\got{g\in GL(V)}$ \Got{tali che}
+ $\got{f=\tau_v}\circ\got{ g.}$
+ 
+ \GOT{Dimostrazione: }\Got{Sia} $\got{v=f(0).}$ \Got{Allora} $\got{g=\tau_{-v}}\circ\got{ f\in Aff(V)}$ \Got{e} $\got{g(0)=0,}$
+ \Got{quindi per la proposizione precedente} $\got{g\in GL(V).}$
+ \Got{Da tale proposizione segue che} 
+ $$
+	\got{Aff(V)=\{\tau_v}\circ\got{ f\;|\;v\in V,f\in GL(V)\}.}
+ $$
+ \Got{Di conseguenza} $\got{Aff(V)}$ \Got{è il gruppo generato da} $\got{T(V)}$ \Got{e da} $\got{GL(V).}$
+ \Got{In particolare} 
+ $$
+	\got{Aff(K^n)=\{X\mapsto AX+B \; |\; A\in GL(n,K),B\in K^n\}.}
+ $$
+ 
+ \vspace{0.5cm}
+ 
+ \GOT{Proposizione: }\Got{Dato uno spazio} $\got{A}$ \Got{affine su} $\got{V}$ \Got{e dati due riferimenti affini} $\got{L=(P_0,P_1,\ldots,P_n)}$
+ \Got{e} $\got{M=(Q_0,Q_1,\ldots,Q_n)}$ \Got{esiste un'unica affinità} $\got{f\in Aff(A)}$ \Got{tale che}
+ $\got{\forall i=0,\ldots,n}$\\
+ $\got{ f(P_i)=Q_i.}$
+ 
+ \GOT{Dimostrazione: }\Got{Ogni} $\got{P\in A}$ \Got{si scrive in modo unico come} $\got{\sum_{i=1}^nt_iP_i}$ \Got{con}
+ $\got{\sum_{i=1}^nt_i=1.}$
+ \Got{Pertanto per definizione di affinità necessariamente si deve avere che} $\got{f(P)=\sum_{i=1}^nt_iQ_i.}$
+ \Got{A questo punto, consideriamo le trasformazioni invertibili} $\got{F_{P_0}:A\rightarrow V}$ \Got{e} $\got{F_{Q_0}:A\rightarrow V}$,
+ \Got{allora si ha che} $\got{F_{P_0}(L)=(0,\vet{P_0P_1},\dots,\vet{P_0P_n})=(0,B)}$ \Got{dove} $\got{B\in V}$ \Got{è un vettore}
+ \Got{di dimensione} $\got{n}$; \Got{similmente} $\got{F_{Q_0}(M)=(0,C).}$
+ 
+ \Got{Ora,} $\got{B,C}$, \Got{per motivi dimensionali, sono basi dello spazio} $\got{V}$, \Got{pertanto esiste un unico endomorfismo lineare}
+ $\got{g}$ \Got{che mappa} $\got{B}$ \Got{in} $\got{C}$. \Got{Infine, sia} $\got{\tau:V\rightarrow V}$ \Got{la traslazione del vettore}
+ $\got{\vet{P_0Q_0}}$. \Got{Mostriamo che la mappa} $\got{f:A\rightarrow A}$ \Got{definita da}
+ \[
+	\got{f = F_{P_0}^{-1} \circ \tau \circ g \circ F_{P_0}}
+ \]
+ \Got{soddisfa le condizioni richieste:}
+ \begin{eqnarray*}
+	&&\got{f(P_0)=F_{P_0}^{-1} \circ \tau \circ g (0) = F_{P_0}^{-1} \circ \tau (0) = F_{P_0}^{-1} (\vet{P_0Q_0}) = Q_0}\\
+	&&\got{f(P_i)=F_{P_0}^{-1} \circ \tau \circ g (\vet{P_0P_i}) = F_{P_0}^{-1} \circ \tau (\vet{Q_0Q_i}) = F_{P_0}^{-1} (\vet{P_0Q_i}) = Q_i}
+ \end{eqnarray*}
+ $\got{\forall i=1,\dots,n}.$
+ \Got{Mostriamo che conserva anche le combinazioni affini, in particolare basta mostrare che conserva quelle di punti in} $\got{L}$:
+ \begin{eqnarray*}
+	\got{f\left(\sum_{i=0}^{n}t_iP_i\right)}&=&\got{F_{P_0}^{-1} \circ \tau \circ g \left(\sum_{i=0}^{n}t_i\vet{P_0P_i}\right)}\\
+	&=&\got{F_{P_0}^{-1} \circ \tau \left( \sum_{i=0}^{n}t_i\vet{Q_0Q_i}\right) }\\
+	&=&\got{F_{P_0}^{-1} \left(\sum_{i=0}^{n}t_i\vet{P_0Q_i}\right)}\\
+	&=&\got{\sum_{i=0}^{n}t_iQ_i}.
+ \end{eqnarray*}
+ 
+ \Got{D'altra parte, si verifica facilmente che se esiste} $\got{f}$ \Got{siffatta, allora l'applicazione} $\got{j:V\rightarrow V}$ \Got{definita}
+ \[
+	\got{j = \tau^{-1} \circ F_{P_0} \circ f \circ F_{P_0}}
+ \]
+ \Got{manda } $\got{\vet{P_0P_i}}$ \Got{in} $\got{\vet{Q_0Q_i}\ \forall i=1,\dots,n}$
+ \Got{e che è lineare (la verifica è del tutto analoga ai passaggi appena descritti). Da ciò segue quindi che } $\got{g=j}$ \Got{cioè l'unicità.}
+ 
+ \begin{center}
+	\GOT{Gruppo delle affinità}
+ \end{center}
+ 
+ \GOT{Definizione (gruppo delle affinità): } \Got{consideriamo il seguente insieme}
+ \[
+	\got{Aff(K^n)=\{x\mapsto Mx+N : M\in GL{K^n}, N\in K^n\}}
+ \]
+ \Got{e l'operazione di composizione} $\circ$: \Got{la coppia} $\got{(Aff(K^n,\circ))}$ \Got{si dice gruppo delle affinità di} $\got{K^n}$.
+ 
+ \GOT{Osservazione: } \Got{la mappa} $\phi:K^n\rightarrow K^{n+1}$, $^{t}x\mapsto ^{t}(^tx | 1)$ \Got{è un isomorfismo affine tra} $\got{K^n}$
+ \Got{e} $\got{H={x\in K^{n+1} : x_{n+1}=0}}$ \Got{il quale è sottospazio affine di } $\got{K^{n+1}}$.
+ 
+ \Got{Vogliamo ora far vedere che questo isomorfismo è più profondo di quanto non appaia a prima vista. In particolare cercheremo di studiare}
+ \Got{la relazione tra le trasformazioni affini in} $K^n$ \Got{e le trasformazioni lineari in} $K^{n+1}$ \Got{arrivando ad identificare}
+ $\got{Aff(K^n}$ \Got{con un sottogruppo di} $\got{GL(n,K)}$.
+ 
+ \GOT{Definizione: } \Got{} $\got{G(H)=\{g\in GL(n+1,K):g(H)=H\}}$.
+ 
+ \GOT{Osservazione: } \Got{\'E immediato verificare che } $\got{G(H)}$ \Got{è un sottogruppo di } $\got{GL(n+1,K)}$,
+ \Got{dato che composizione ed inverse di mappe che conservano} $\got{H}$ \Got{a loro volta lo conservano}.
+ 
+ \GOT{Osservazione: } \Got{Se scomponiamo } $\got{g\in G(H)}$ \Got{in blocchi in questo modo:}
+ \[
+	\got{g} = \left(
+		\begin{array}{cc}
+		\got{M} & \got{N} \\ 
+		\got{^tp} & \got{q}
+		\end{array}
+	\right)
+ \]
+ \Got{ dove} $\got{M\in M(n,K);\  N,p\in K^n,\ q \in K}$, \Got{e se vogliamo che } $\got{g}$ \Got{fissi} $\got{H}$
+ \Got{allora si deve avere che la} $\got{n+1}$ \Got{-esima componente di} $\got{g\,^t(x|1)}$ \Got{sia ancora} $\got{1}$,
+ \Got{cioè che } $\got{\forall x\in K^n\  ^tpx+q=1}$, \Got{cioè che} $\got{p=0, q=1}$.
+ 
+ \GOT{Proposizione: } \Got{sia } $\Phi:\got{Aff(K^n)\rightarrow G(H)}$ \Got{definito da}
+ \[
+	\Phi\got{(x\mapsto Mx+N)=}\left(
+		\begin{array}{cc}
+		\got{M} & \got{N} \\ 
+		\got{0} & \got{1}
+		\end{array}
+	\right)
+ \]
+ \Got{è un isomorfismo di gruppi.}
+ 
+ \GOT{Dimostrazione: } \Got{Per prima cosa è immediato vedere che} $\Phi$ \Got{ è iniettivo dato che il ker è solo l'applicazione identità.}
+ \Got{La surgettività ci è fornita dalla precedente osservazione. Rimane da far vedere che questo operatore commuta con la composizione.}
+ \Got{Date due affinità} $\got{a:x\mapsto Mx+N,\ a':x\mapsto M'x+N'}$ \Got{allora}
+ \[
+	\got{a\circ a':x\mapsto MM'x+ MN'+N}
+ \]
+ \Got{quindi}
+ \[
+	\Phi\got{(a)}\circ\Phi\got{(a')}=\left(
+		\begin{array}{cc}
+		\got{MM'} & \got{MN'+N} \\ 
+		\got{0} & \got{1}
+		\end{array}
+	\right)=\Phi\got{(a\circ a')}.
+ \]
+
+ 
+ 
+\end{document}

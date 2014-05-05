@@ -1,0 +1,56 @@
+\ProvidesPackage{stilebase}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[a4paper,twoside,top=0.7in, bottom=1in, left=0.7in, right=0.7in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = {blue},
+	urlcolor = {red}
+}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{color}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{enumitem}
+\usepackage[nameinlink]{cleveref}
+\newcommand{\crefpairconjunction}{ e }
+\newcommand{\crefrangepreconjunction}{da }
+\newcommand{\crefrangeconjunction}{ a }
+
+
+\newcounter{Results}[section]
+\renewcommand{\theResults}{\thesection.\arabic{Results}}
+
+\newtheorem{theorem}[Results]{Teorema}
+\newtheorem{lemma}[Results]{Lemma}
+\newtheorem{proposition}[Results]{Proposizione}
+\newtheorem{corollary}[Results]{Corollario}
+\newtheorem{exercise}[Results]{Esercizio}
+
+\theoremstyle{remark}
+\newtheorem{remark}[Results]{Nota}
+
+\theoremstyle{definition}
+\newtheorem{definition}[Results]{Definizione}
+\newtheorem*{example}{Esempio}
+
+\crefname{theorem}{thm:}{thms:}
+\crefname{lemma}{lemma:}{lemmi:}
+\crefname{proposition}{prop:}{props:}
+\crefname{corollary}{cor:}{cor:}
+\crefname{exercise}{es:}{es:}
+\crefname{remark}{nota:}{note:}
+\crefname{definition}{def:}{def:}
+
+\numberwithin{equation}{section}
+
+\newcommand{\N}{\ensuremath{\mathbb N}}%Naturali
+\newcommand{\Q}{\ensuremath{\mathbb Q}}%Razionali
+\newcommand{\R}{\ensuremath{\mathbb R}}%Reali
+\newcommand{\Rbar}{\overline{\R}}%Reali U +- infinito
