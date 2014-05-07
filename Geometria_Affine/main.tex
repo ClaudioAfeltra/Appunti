@@ -113,7 +113,11 @@ Consideriamo ora il caso delle quadriche, ossia le ipersuperfici $[g]$ dove $g\i
 			\end{array}
 		\right)
 	\]
-	e consideriamo anche $\tilde{x} =\left(\begin{smallmatrix}x \\1\end{smallmatrix}\right)$. Allora $g(x)=\tra{\tilde{x}}Q\tilde{x}$.
+	e consideriamo anche $\tilde{x} =\left(\begin{smallmatrix}
+x \\
+1
+\end{smallmatrix}
+\right)$. Allora $g(x)=\tra{\tilde{x}}Q\tilde{x}$.
 \end{remark}
 
 \begin{definition}[Cono]
@@ -131,7 +135,10 @@ Consideriamo finalmente il cambiamento di forma delle  quadriche via affinità.
 
 \begin{lemma}
 	Data una quadrica $g$ a cui è associata la matrice $Q$ e una affinità $\Psi(x)=Mx+N$ a cui è possibile  associare la matrice
-	$\tilde M_N = \left(\begin{smallmatrix}M & N \\ 0 & 1\end{smallmatrix}\right)$ allora 
+	$\tilde M_N = \left(\begin{smallmatrix}
+M & N \\ 0 & 1
+\end{smallmatrix}
+\right)$ allora 
 	$g\circ \Psi = \tra{\tilde M_N}Q \tilde M_N$.
 \end{lemma}
 \begin{proof}
@@ -167,7 +174,18 @@ Consideriamo finalmente il cambiamento di forma delle  quadriche via affinità.
 
 \end{proof}
 
+\begin{definition}[Conica a centro]
+	Una conica $\mathfrak{C}=[g]$ è detta a centro se $\exists N\in \K^n$ tale che $g(x)=g(2N-x)$, ossia $\mathfrak{C}$ è invariante per la
+	simmetria centrale rispetto a $N$.
+\end{definition}
 
+\begin{lemma}
+	Se $0$ è centro della conica $\mathfrak{C}=[g]$ e $g=\tra{x}Ax+2Bx+C$, allora $B=0$.
+\end{lemma}
+
+\begin{proof}
+	
+\end{proof}
 
 
 \end{document}
