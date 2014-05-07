@@ -113,7 +113,7 @@ Consideriamo ora il caso delle quadriche, ossia le ipersuperfici $[g]$ dove $g\i
 			\end{array}
 		\right)
 	\]
-	e consideriamo anche $\tilde{x} =\bigl(\begin{smallmatrix}x \\1\end{smallmatrix}\bigr)$. Allora $g(x)=\tra{\tilde{x}}Q\tilde{x}$.
+	e consideriamo anche $\tilde{x} =\left(\begin{smallmatrix}x \\1\end{smallmatrix}\right)$. Allora $g(x)=\tra{\tilde{x}}Q\tilde{x}$.
 \end{remark}
 
 \begin{definition}[Cono]
@@ -131,12 +131,40 @@ Consideriamo finalmente il cambiamento di forma delle  quadriche via affinità.
 
 \begin{lemma}
 	Data una quadrica $g$ a cui è associata la matrice $Q$ e una affinità $\Psi(x)=Mx+N$ a cui è possibile  associare la matrice
-	$\tilde M_N = \bigl(\begin{smallmatrix}M & N \\ 0 & 1\end{smallmatrix}\bigr)$ allora 
+	$\tilde M_N = \left(\begin{smallmatrix}M & N \\ 0 & 1\end{smallmatrix}\right)$ allora 
 	$g\circ \Psi = \tra{\tilde M_N}Q \tilde M_N$.
 \end{lemma}
 \begin{proof}
 	Basta fare un semplice conto: $g(\Psi(x))=\tra{\Psi(x)}Q \Psi(x) = \tra{x}\tra{\tilde M_N}Q \tilde M_N x$ da cui la tesi.
 	Tuttavia se svolgiamo il conto tenendo presente che  $\tilde M_N$ e $Q$ sono matrici $n+1\times n+1$ otteniamo
+	\[
+		\tra{\tilde M_N}Q \tilde M_N = 
+		\left(
+			\begin{array}{cc}
+			\tra{M} & 0\\
+			\tra{N} & 1
+			\end{array}
+		\right)
+		\left(
+			\begin{array}{cc}
+			A & B\\
+			\tra{B} & c
+			\end{array}
+		\right)
+		\left(
+			\begin{array}{cc}
+			M & N\\
+			0 & 1
+			\end{array}
+		\right) =
+		\left(
+			\begin{array}{cc}
+			\tra{M}AM & \tra{M}AN+\tra{M}B\\
+			\tra{(\tra{M}AN+\tra{M}B)}& \tra{N}AN+2\tra{B}N+c
+			\end{array}
+		\right)
+	\]
+
 \end{proof}
 
 
