@@ -1,0 +1,898 @@
+ 
+ \section{Gruppi di trasformazioni}
+ 
+ Sia $ X $ un  insieme non vuoto. Si definisce $$S(X)=\{f:X\to X\quad biunivoche\}.$$ 
+ Allora $(S(X),\circ)$ è un gruppo.
+ 
+ \begin{definition}
+ Si dice gruppo di trasformazioni di $X$ ogni sottogruppo di $S(X).$
+ \end{definition}
+ 
+ \begin{example}
+ $GL(V)$ (dove $V$ è uno spazio vettoriale); $O(V,\phi)$ con $\phi\in PS(V).$
+ \end{example}
+ 
+ \subsection{Traslazioni}
+ 
+ Esistono trasformazioni naturali e semplici, ma non lineari.
+ 
+ \begin{definition}
+  Dato uno spazio vettoriale $V$ ed un suo elemento $v$ si dice traslazione di vettore $v$ la funzione
+ \begin{eqnarray*}
+	\tau_v:V & \to & V \\
+	w & \mapsto & w+v
+ \end{eqnarray*}
+ \end{definition}
+ 
+ \begin{remark}
+  $\tau_v$ è lineare se e solo se $v=0$.
+ \end{remark}
+ 
+ \begin{proposition}
+ Sia $T(V)=\{\tau_v\;|\;v\in V\}$. Allora $(T(V),\circ)$
+ è un gruppo abeliano di trasformazioni di $V$, ed è isomorfo a $(V,+)$.
+ \end{proposition}
+ 
+ \begin{proof}
+La proprietà associativa vale perché l'insieme è formato da funzioni.
+ $\tau_0$ è evidentemente l'elemento neutro, e $\forall v\in V\;\; \tau_v\circ\tau_{-v}=\tau_{-v}\circ\tau_v=id=\tau_0$, 
+ dunque $\tau_v^{-1}=\tau_{-v}$.
+ Inoltre $\forall u,v,w\in V\quad (\tau_v\circ\tau_w)(u)=\tau_v(\tau_w(u))=\tau_v(u+w)=u+w+v=\tau_w(\tau_v(u))=$
+ $=(\tau_w\circ\tau_w)(v)=(\tau_w\circ\tau_v)(u)$, dunque  $\tau_v\circ\tau_w(u)=\tau_w\circ\tau_v$,
+  pertanto il gruppo è abeliano.
+ Per la seconda parte della tesi, la funzione
+ \begin{eqnarray*}
+	(V,+) & \to & (T(V)) \\
+	v & \mapsto & \tau_v
+ \end{eqnarray*}
+ è un isomorfismo di gruppi, perché è ovviamente biunivoca, e  $\tau_{v+w}=\tau_v\circ\tau_w$.
+  \end{proof}
+  
+	\subsection{Azione di un gruppo}
+ 
+ Dato un gruppo $G$ ed un insieme $X$ si dice azione di $G$ su $X$ un omomorfismo
+ $\psi:G\to S(x)$.
+ L'azione si dice transitiva se  $\forall x,y\in X\;\;\exists g\in G$ tale che  $\psi(g)(x)=y$.
+ 
+ \begin{remark}
+ $T(V)$ agisce su $V$ in modo transitivo.
+ Infatti se $v,w\in V,\quad\tau_{w-v}(v)=w$.
+ \end{remark}
+ 
+	\subsection{Gruppo delle isometrie}
+ 
+ Sia $(V,\phi)$ uno spazio euclideo. $\phi$ induce una distanza $d$ su $V$. Allora si pone
+ $$\Isom{V,d}=\{f:V\to V\;|\;\forall P,Q\in V\quad d(P,Q)=d(f(P),f(Q))\}.$$
+ 
+ \begin{remark} $\Isom{ V,d}$ gode delle seguenti proprietà:
+ \begin{itemize}
+	\item $O(V,\phi)\subseteq \Isom{ V,d}$;
+	\item $T(V)\subseteq \Isom{ V,d}$;
+	\item $\forall v\in V,\forall f\in O(V,\phi)\quad\tau_v\circ f\in \Isom{ V,d}$
+ \end{itemize}
+ \end{remark}
+ 
+ \begin{lemma}
+ $\forall v\in V, \forall f\in GL(V)$ (e dunque in particolare per 
+ $f\in O(V,\phi)$) $f\circ\tau_v=\tau_{f(v)}\circ f$ (e pertanto in generale $f$ e $\tau_v$ non commutano).
+ \end{lemma}
+ 
+ \begin{proof}
+ $(f\circ\tau_v)(x)=f(x+v)=f(x)+f(v)=\tau_{f(v)}(f(x))=(\tau_{f(v)}\circ f)(x)$.
+  \end{proof}
+ 
+ \begin{proposition}
+ $\{\tau_v\circ f\;|\;v\in V,f\in O(V,\phi)\}$ è un gruppo rispetto alla composizione.
+ \end{proposition}
+ 
+ \begin{proof}
+ Poiché  $(\tau_v\circ f)\circ(\tau_w\circ g)=\tau_v\circ(f\circ\tau_w)\circ g=
+ \tau_v\circ\tau_{f(w)}\circ f\circ g$, tale insieme è chiuso rispetto alla composizione.
+ Inoltre per questo è vero che $(\tau_v\circ f)\circ(\tau_w\circ g)=id$ se e solo se $\tau_v\circ\tau_{f(w)}\circ f\circ g$,
+ la qual cosa è senza dubbio vera se $f(w)=-v$  e  $f\circ g=id$, ossia se $w=-f^{-1}(v)$  e 
+ $g=f^{-1}$.
+  \end{proof}
+ 
+ \begin{remark}
+ Analogamente si dimostra che anche $\{\tau_v\circ f\;|\;v\in V,f\in GL(V)\}$ 
+ è un gruppo di trasformazioni.
+ \end{remark}
+ 
+ \begin{theorem}
+ \label{thm:isometrie}
+ $\Isom{ V,\phi}=\{\tau_v\circ f\;|\;v\in V,f\in O(V,\phi)\}$.
+ \end{theorem}
+ 
+ \begin{proof}
+ Il fatto che il membro destro dell'uguaglianza sia incluso in quello sinistro è ovvio.
+ Viceversa, se $f\in \Isom{ V,\phi}$  e  $f(0)=v$, allora se  $\tau_{-v}\circ f,\; g\in \Isom{ V,\phi}$ e
+ $g(0)=0$. Dunque, per un teorema visto, $g\in O(V,\phi)$, e pertanto $f=\tau_v\circ g$.
+  \end{proof}
+ 
+ \begin{corollary}
+$\Isom{ V,\phi}$ è un gruppo di trasformazioni.
+ \end{corollary}
+ 
+ 
+\section{Isometrie di }%$\R^n$}
+ 
+ Si consideri adesso come caso particolare $\R^n$ dotato del prodotto scalare ordinario.
+ Il \cref{thm:isometrie} allora implica che $$\Isom{ \R^n}=\{X\mapsto AX+B|A\in O(n),B\in \R^n\}.$$
+ Pertanto se $f\in \Isom{ \R^n}$ allora $$Fix(f)=\{X\in \R^n|AX+B=X\}=\{X\in \R^n|(A-I)X=-B\},$$
+ quindi o $Fix(f)$ è vuoto, o è un sottospazio affine di $\R^n$ di giacitura
+ $$\{X\in \R^n|(A-I)X=0\}=Fix(A).$$
+ 
+ 
+\subsection{Simmetrie}
+ 
+ $f\in \Isom{ \R^n}$ si dice simmetria se $f^2=id$.
+ 
+ \begin{proposition}
+ Sia $f$ una simmetria di $\R^n$ tale che $f(X)=AX+B$, con $A\in O(n$).
+ Allora:
+ \begin{enumerate}[label=\bf\Roman*)]
+	\item $A^2=I$ (e dunque $A$ è diagonalizzabile) e $f(B)=AB+B=0$;\label{sim:p}
+	\item $\frac{B}{2}\in Fix(f)$, e dunque $Fix(f)=Fix(A)+\frac{B}{2}$;
+	\item $B$ è ortogonale a $Fix(A)$.
+ \end{enumerate}
+ \end{proposition}
+ 
+ \begin{proof}
+ \begin{enumerate}[label=\bf\Roman*)]
+ \item $\forall X\in \R^n,  X=f^2(X)=A(AX+B)+B=A^2X+AB+B$, e dunque
+ $A^2=I$ e $f(B)=AB+B=0$.
+ \item $f(\frac{B}{2})=\frac{AB}{2}+B=\frac{AB+B}{2}+\frac{B}{2}=\frac{B}{2}$.
+ \item Poiché $A^2=I,\quad A$ è diagonalizzabile con autovalori $1$ e $-1$, pertanto
+ $R^n=V(1,A)\oplus V(-1,A)$. Per definizione si ha che $Fix(A)=V(1,A)$.
+ Vogliamo dimostrare che $Fix(A)^{\bot}=V(-1,A)$.  Se $x\in V(-1,A)$ e $y\in V(1,A)$, allora 
+  \[
+   \langle x,y\rangle=^txy=^t(-Ax)Ay=-^tx^tAAy=-^txy= -\langle x,y\rangle,
+  \]
+ pertanto $\langle x,y\rangle=0.$
+ Dunque $V(-1,A)\subseteq Fix(A)$. Ma entrambi hanno dimensione
+ $n-dim(V(1,A))$, dunque coincidono.
+ Ma per il punto \ref{sim:p} $B\in V(-1,A)$.
+ \end{enumerate}
+ \end{proof}
+ 
+	\subsection{Riflessioni}
+ 
+ $f\in \Isom { \R^n }$ viene detta riflessione se $f^2=id$ e $Fix(f)$ 
+ è un iperpiano affine (ossia se ha dimensione $n-1$).
+ 
+ \begin{remark}
+ Se $f(X)=AX+B$ è una riflessione, $dim(Fix(f))=n-1$, per cui
+ $A\in O(n)$ induce una riflessione lineare rispetto alla giacitura di $Fix(f)$. In particolare $det\,A=-1$.
+ \end{remark}
+ 
+ \begin{exercise}
+In $\R^2$ siano $r_1$ e $r_2$ due rette passanti per l'origine. Sia $\alpha$
+ l'angolo (considerato in senso antiorario) tra $r_1$ e $r_2$. Siano $\rho_1$ e $\rho_2$
+ le riflessioni del piano di assi rispettivamente $r_1$ e $r_2$.
+ Si dimostri che $\rho_2\circ\rho_1$ è la rotazione antioraria del piano avente come centro l'origine e di angolo 
+ $2\alpha$.
+ \end{exercise}
+ 
+ \begin{exercise}
+ Studiare la composizione di due riflessioni distinte di $\R^n$.
+ \end{exercise}
+ 
+ \begin{proof}
+Siano $\rho_1(X)=A_1X+B_1$ e $\rho_2(X)=A_2X+B_2$, $Fix(\rho_1)=H_1$ e
+ $Fix(\rho_2)=H_2$. 
+ Sappiamo che $A_1^2=A_2^2=I$ e $A_1B_1+B_1=A_2B_2+B_2=0$.
+ 
+ \begin{description}
+  \item[I caso:] $H_1$ e $H_2$ sono paralleli (ossia hanno la stessa giacitura).
+ Allora $Fix(A_1)=Fix(A_2)$. Pertanto $A_1$ e $A_2$ inducono una riflessione rispetto allo stesso piano.
+ Dunque $A_1=A_2=A$.
+ Ma allora $(\rho_2\circ\rho_1)(X)=A(AX+B_1)+B_2=A^2X+AB_1+B_2=X+(AB_1+B_2)=$
+ $=X+(B_2-B_1)$
+ Di conseguenza $\rho_2\circ\rho_1$ è una traslazione di $B_2-B_1$, che è il doppio della distanza tra
+ $H_1$ e $H_2$.
+ \item[II caso: ] $H_1$ e $H_2$ non sono paralleli.
+ In tal caso $H_1\cap H_2$ è un sottospazio affine di dimensione $n-2$.
+ Ma $H_1\cap H_2\subseteq Fix(\rho_1\circ\rho_2)$.
+ Inoltre la giacitura di $Fix(\rho_2\circ\rho_1)$ è
+ $Fix(A_2A_1)=V(1,A_2A_1)$. Allora $L=V(1,A_2A_1)^{\bot}=V(-1,A_2A_1)$ è invariante per $A_2A_1$.
+ Pertanto tutti i piani ortogonali a $H_1\cap H_2$ (che hanno giacitura $L$) sono invarianti per
+ $\rho_2\circ\rho_1$.
+ Per l'esercizio precedente su tali piani $\rho_2\circ\rho_1$ è composizione di riflessioni rispetto a rette incidenti,
+ dunque è una rotazione.
+ \end{description}
+ \end{proof}
+ 
+ \begin{exercise}[Forma canonica per le simmetrie]
+Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
+ $k=dim(Fix(f)),$ allora esiste una base ortonormale $B=\{v_1,\ldots,v_n\}$ di $\R^n$ rispetto alla quale
+ $f$ si scrive come
+ $$f(X)=\left(
+ \begin{array}{cc}
+  I_k & 0\\
+  0 & I_{n-k}
+ \end{array}
+ \right)
+ X+\alpha v_n.
+ $$
+ \end{exercise}
+ 
+ \begin{theorem}
+ Ogni $f\in \Isom{ R^n}$ è composizione di al più $n+1$ riflessioni
+ \end{theorem}
+ 
+ \begin{proof}
+ Se $f(0)=0$, allora $f\in O(n)$, dunque è composizione di al più $n$ 
+ riflessioni.
+ Se $f(0)=B\ne 0$, sia $H=\{X\in R^n|\;d(X,0)=d(X,B)\}$.
+ $H$ è un iperpiano. Infatti 
+ \[
+  \quad x\in H\Longleftrightarrow ||x||^2=||x-B||^2\Longleftrightarrow\langle x,x\rangle=
+ \langle x-B,x-B\rangle\Longleftrightarrow\langle B,B\rangle-2\langle B,X\rangle=0,
+ \]
+ equazione che definisce un piano. Inoltre, poiché $\frac{B}{2}\in H$, la giacitura di $H$ è 
+ $Span(B)^{\bot}$.
+ Sia $\rho_H$ la riflessione rispetto all'iperpiano $H$.
+ Allora
+ 
+ \[ \left\{
+ \begin{array}{l}
+  \rho_H\circ f\in \Isom{ R^n} \\
+  (\rho_H\circ f)(0)=\rho_H(B)=0
+ \end{array}
+ \right.
+ \Longrightarrow \rho_H\circ f\in O(n)\Longrightarrow \rho_H\circ f
+ \]
+ è composizione di al più $n$ riflessioni, dunque $f=\rho_h\circ(\rho_H\circ f)$
+ è composizione di al più $n+1$ riflessioni.
+  \end{proof}
+ 
+ \begin{definition}Un' isometria si dice diretta se è composizione di un numero pari di riflessioni, si dice inversa se
+ è composizione di un numero dispari di riflessioni. Se $f(X)=AX+B,\quad f$ è diretta se $det\; A=1$,
+ è inversa se $det\; A=-1$.
+ \end{definition}
+ 
+ \begin{proposition}
+ Se $f\in \Isom{ R^n}$ ha almeno un punto fisso, è composizione di al più $n$ riflessioni.
+ \end{proposition}
+ 
+ \begin{proof}
+ Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in R^n$
+ tale che $f(Q)=Q$. Sia inoltre $H$ definito come nella dimostrazione precedente.
+ Allora come prima $\rho_H\circ f\in O(n)$, e poiché $d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H$, e pertanto
+ $(\rho_h\circ f)(Q)=Q$.
+ Perciò $dim(Fix(\rho_H\circ f))\ge 1$, e di conseguenza $\rho_h\circ f$ è composizione di al più
+ $n-1$
+ riflessioni.
+ Dunque $f$ è composizione di al più $n$ riflessioni.
+  \end{proof}
+
+	\subsection{Classificazione delle isometrie di }%$\R^2$}
+ 
+ Alcuni esempi di isometrie di $\R^2$ sono:
+ \begin{itemize}
+	\item traslazioni;
+	\item rotazioni;
+	\item riflessioni;
+	\item composizioni delle precedenti.
+ \end{itemize}
+ 
+ \begin{definition}
+ Si chiama glissoriflessione (o riflessione rotatoria) la composizione di una riflessione con una traslazione parallela
+ all'asse della riflessione.
+ \end{definition}
+ 
+ \begin{remark}
+ La glissoriflessione è un'isometria inversa senza punti fissi.
+ \end{remark}
+ 
+ \begin{theorem}[di classificazione delle isometrie piane]
+ 
+Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
+ \begin{enumerate}[label=\bf\Roman*)]
+  \item traslazione (isometria diretta senza punti fissi);
+  \item rotazione (isometria diretta con punti fissi);
+  \item riflessione (isometria inversa con punti fissi);
+  \item glissoriflessione (isometria inversa senza punti fissi).
+ \end{enumerate} 
+ \end{theorem}
+ \begin{proof}
+ Sia $f\in \Isom{ \R^2}$. Allora $f$ è composizione di $k$ riflessioni, con
+ $k\le 3$.
+ Se $k=0,\; f$ è l'identità.
+ Se $k=1,\; f$ è una riflessione.
+ Se $k=2$, come abbiamo già visto $f$ è una traslazione od una rotazione.
+ Se $k=3,\; f=\rho_1\circ\rho_2\circ\rho_3$. Sia $r_i=Fix(\rho_i)$ (con $i=1,2,3$).
+ $\rho_1\circ\rho_2$ può essere una traslazione od una rotazione.
+ \begin{description}
+ \item[I caso:] $\rho_1\circ\rho_2=\tau_v$ è una traslazione.
+ Allora sia $v=v_1+v_2$, con $v_1//r_3$ e $v_2\bot r_3$.
+ Quindi $f=\tau_v\circ\rho_3=\tau_{v_1}\circ(\tau_{v_2}\circ\rho_3)$. Ma $\tau_{v_2}\circ\rho_3$
+ è una riflessione
+ $\rho'_3$ rispetto ad un asse $r'_3$ parallelo a $r_3$.
+ Dunque $f=\tau_{v_1}\circ\rho'_3$, che è una glissoriflessione se $v_1\ne 0$, è una riflessione se 
+ $v_1=0$.
+ \item[II caso:] $\rho_1\circ\rho_2$ è una rotazione rispetto ad un punto $P$ di angolo $\alpha$.
+ Vanno distinti due ulteriori sottocasi:
+ \begin{itemize}
+  \item $P\notin r_3$. In tal caso la rotazione $R=\rho_1\circ\rho_2$ è composizione di due riflessioni
+  $\rho'_1$
+  e $\rho'_2$, rispetto a rette $r'_1$ e $r'_2$ incidenti in $P$,
+  che formano un angolo di $\frac{\alpha}{2}$ e con $r'_2$ parallela a $r'_3$.
+  Allora $f=\rho_1\circ\rho_2\circ\rho_3=\rho'_1\circ\rho'_2\circ\rho_3$. Ma
+  $\rho'_2\circ\rho_3$
+  è una traslazione, dunque $f$ è una glissoriflessione.
+  \item $P\in r_3$ (ossia $r_1,\; r_2$ e $r_3$ sono incidenti). Allora si può scrivere
+  $\rho_1\circ\rho_2$ come $\rho'_1\circ\rho_3$, dove $\rho'_1$ è la riflessione rispetto ad un
+  opportuno asse passante per $P$.
+  Allora $$f=\rho_1\circ\rho_2\circ\rho_3=\rho'_1\circ\rho_3\circ\rho_3=\rho'_1,$$ e dunque $f$ è una rotazione. 
+ \end{itemize}
+ \end{description}
+  \end{proof}
+ \begin{remark}
+ $\rho_1\circ\rho_2\circ\rho_3$ è una riflessione se e solo se i tre assi di riflessione sono paralleli
+ o incidenti.
+ \end{remark}
+ 
+  \subsection{Classificazione delle isometrie di }%$\R^3$}
+  
+ Alcuni esempi di isometrie di $\R^3$ sono:
+ \begin{itemize}
+  \item traslazioni (luogo dei punti fissi: $\emptyset$);
+  \item riflessioni (luogo dei punti fissi: un piano);
+  \item rotazioni (luogo dei punti fissi: una retta).
+ \end{itemize}
+ \begin{remark}
+ La composizione di tre riflessioni rispetto a tre piani distinti incidenti in un punto (ma non in una retta)
+ è la simmetria rispetto a quel punto.
+ In generale due isometrie elementari (traslazioni, riflessioni, rotazioni) non commutano, fuorché in alcuni casi particolari,
+ cui si danno dei nomi:
+ \begin{enumerate}[label=\bf\Roman*)]
+  \item  si chiama glissorotazione la composizione di una riflessione e di una traslazione parallela al piano di riflessione;
+  \item si chiama riflessione rotatoria la composizione di una riflessione e di una rotazione intorno ad una retta ortogonale
+  al piano di riflessione (un caso particolare sono le simmetrie centrali);
+  \item si chiama avvitamento la composizione di una rotazione e di una traslazione parallela alla retta intorno a cui
+  avviene la rotazione.
+ \end{enumerate}
+ \end{remark}
+ \begin{theorem}
+ Tutte le isometrie di $\R^3$ sono traslazioni, riflessioni, rotazioni, glissorotazioni, riflessioni rotatorie
+ o avvitamenti.
+ \end{theorem}
+ 
+  \section{Il gruppo di trasformazioni }%$A(V)$}
+ Dato uno spazio vettoriale $V$ si definisce $A(V)=\{\tau_v\circ f\;|\; v\in V,\; f\in GL(V)\}$.
+ È stato già visto che $A(V)$ è un gruppo di trasformazioni, e che coincide con il sottogruppo di $S(V)$
+ generato da $T(V)$ e da $GL(V)$.
+ 
+ \vspace{0.5cm}
+ 
+ \begin{definition}
+ Dati un gruppo di trasformazioni $G$ di un insieme $X$ e un elemento $x$ di
+ $X$ si chiama stabilizzatore di $x$ l'insieme $St_x(G)=\{g\in G\;|\; g(x)=x\}$.
+ \end{definition}
+ 
+ \begin{proposition}
+ \begin{enumerate}[label=\Roman*)]
+	 \item Se $|V|>2$ allora $St_v(GL(V))=GL(V)$ se e solo se $v=0$.
+	 \item $\forall v\in V\quad St_v(A(G))\cong GL(V)$.
+	\end{enumerate} 
+ \end{proposition}
+ 
+ \begin{proof}
+ I) Ovviamente $St_0(GL(V))=GL(V).$
+ D'altra parte se $v\ne 0$ allora è banale trovare una funzione $f\in GL(V)$ tale che $f(v)\ne v.$
+  
+ 
+ II) Innanzitutto $\forall v,w\in V\;\; St_v(A(V))$ e $St_w(A(V))$ sono isomorfi.
+ Infatti se
+ $u=v-w$ (sicché $\tau_u(w)=v)$
+ \begin{eqnarray*}
+	St_v(A(V)) &\to & St_w(A(V)) \\
+	f &\mapsto & \tau_{-u}\circ f\circ\tau_u
+ \end{eqnarray*}
+ 
+ è un isomorfismo.
+ Inoltre $\tau_v\circ f\in St_0(A(V))$ se e solo se $(\tau_v\circ f)(0)=0,$ cioè se e solo se $v=0$,
+ dunque $St_0(A(V))=GL(V)$.
+ Pertanto $$\forall v\in V\quad St_v(A(V))\cong St_0(A(V))=GL(V).$$
+ 
+ 
+ 
+ Informalmente si può dire che in $V$ c'è un punto privilegiato, l'origine, mentre in $A(V)$
+ tutti i punti sono equivalenti.
+ Rileggendo la dimostrazione si può notare che ad ogni coppia di vettori $v,w\in V$ si è associata una traslazione
+ $\tau_{v-w}$, e le traslazioni costituiscono un gruppo isomorfo a $(V,+)$.
+ Grazie alla definizione di spazio affine si distingueranno gli elementi di $V$ pensati come punti o come traslazioni.
+ \end{proof}
+ 
+	\section{Spazi affini}
+ 
+ Dato uno spazio vettoriale $V$, un insieme non vuoto $A$ si dice spazio affine su $V$
+ se esiste una funzione $F:A\times A\to V$ che associa ad ogni coppia di punti $P,Q\in V$ un vettore di $V$,
+ denotato $\overrightarrow{PQ}$, in modo da verificare le seguenti condizioni:
+ \begin{enumerate}[label=\bf\Roman*)]
+	\item $\forall P\in A,\forall v\in V\;\;\exists!\; Q\in A$ tale che $\overrightarrow{PQ}=v$;
+	\item $\forall P,Q,R\in A\quad\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}\;\;$
+		(relazione di Chasles).
+ \end{enumerate}
+ 
+ \begin{remark}
+ Dalla relazione di Chasles discende che: 
+ \begin{enumerate}[label=\bf\alph*)]
+	\item $\forall P\in A\quad\overrightarrow{PP}=0\quad$ (prendendo $P=Q=R);$
+	\item $\forall P,Q\in A\quad\overrightarrow{PQ}=-\overrightarrow{QP}\quad$ (prendendo $P=R).$
+ \end{enumerate}
+ \end{remark}
+ 
+ \begin{example}
+	\begin{enumerate}[label=\bf\Roman*)]
+ \item $A=V$,
+ \begin{eqnarray*}
+	F: V\times V & \to & V \\
+	(P,Q) & \mapsto & \vet{PQ}\stackrel{def}{=}Q-P
+ \end{eqnarray*}
+ \item Data $f\in Hom(V,W)$ e dato $b\in W$ siano $A=f^{-1}(b)$ e $V=f^{-1}(0)=ker(f)$.
+ Allora $A$ è uno spazio affine su $V$ tramite
+ \begin{eqnarray*}
+  F: A\times A & \to & V \\
+  (a_1,a_2) & \mapsto & \vet{a_1a_2}\stackrel{def}{=}a_2-a_1
+ \end{eqnarray*}
+ \end{enumerate}
+ \end{example}
+ 
+	\subsection{Traslazioni}
+ 
+ Dalla definizione, fissato $v\in V,\;\exists !Q\in A$ tale che $\vet{PQ}=v$.
+ Si definisce allora traslazione ogni funzione $\tau_v:A\to A$ tale che $\tau_v(P)=Q,$ dove $\vet{PQ}=v$.
+ Inoltre si usa la definition $P+v=\tau_v(P)$.
+ Con tale definition si ha che:
+ \begin{itemize}
+	\item $\vet{P(P+v)}= {v}$;
+	\item $P+\vet{PQ}=Q$.
+ \end{itemize}
+ 
+ \begin{lemma}
+ $\forall P\in A,\; \forall v_1,v_2\in V$ si ha che $(P+v_1)+v_2=P+(v_1+v_2).$
+ \end{lemma}
+ 
+ \begin{proof}
+ Siano $P_1=P+v_1$ e $P_2=P+v_2$. Allora $v_1=\vet{PP_1}$ e
+ $v_2=\vet{PP_2}.$.
+ Perciò si ha che $P+(v_1+v_2)=P+(\vet{PP_1}+\vet{PP_2})=P+\vet{PP_2}=P_2$.
+ \end{proof}
+ 
+	\subsection{Combinazioni affini}
+ 
+ Fissato $P\in A$, si definisce
+ \begin{eqnarray*}
+  F_P: A & \to & V \\
+  Q & \mapsto & \vet{PQ}
+ \end{eqnarray*}
+ 
+ Dagli assiomi segue che $F_P$ è biunivoca e che $F_P(P)=\vet{PP}=0$. Dunque $F_P$ trasforma
+ $P$ nell'origine di $V$.
+ Dunque si vorrebbe trovare una definizione di ``combinazione affine'' di punti di $A$ che corrisponda alla combinazione
+ lineare di vettori. Siano $P_1,P_2,\ldots,P_k\in A$. Per ogni $P\in A\; F_P:$ trasforma
+ $P_i$ in $\vet{PP_i}$.
+ Dati $t_1,\ldots,t_k\in \K$ esiste $\sum_{i=1}^kt_i\vet{PP_i}\in V$, e dunque anche
+ $F_P^{-1}(\sum_{i=1}^kt_i\vet{PP_i})\in A$.
+ Affinché il risultato sia indipendente da $P,$ deve valere che
+ $$\forall P,Q\in A\quad P+\sum_{i=1}^kt_i\vet{PP_i}=Q+\sum_{i=1}^kt_i\vet{QP_i},$$
+ il che accade se
+ $$P+\sum_{i=1}^kt_i\vet{PP_i}=P+\sum_{i=1}^kt_i(\vet{PQ}+\vet{QP_i})=P+\left(\sum_{i=1}^kt_i\right)\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i}$$
+ è uguale a
+ $$Q+\sum_{i=1}^kt_i\vet{QP_i}=P+\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i},$$
+ ossia se e solo se $\sum_{i=1}^kt_i=1$.
+ Da ciò discende la seguente definizione.
+ 
+ \begin{definition}
+ Dati $P_1,\ldots,P_k\in A$ e $t_1,\ldots,t_k\in \K$ con $\sum_{i=1}^kt_i=1$,
+ si chiama combinazione affine di $P_1,\ldots,P_k$, dato un qualsiasi $P\in A$, 
+ $F_P^{-1}(\sum_{i=1}^kt_i\vet{PP_i})$.
+ Si definisce inoltre $comb_a(P_1,\ldots,P_n)=\{\text{combinazioni affini di }\K\}.$
+ \end{definition}
+ 
+ \begin{example}
+ Se $A=\K^n$ e $P_1,P_2$ sono punti distinti, allora
+ \begin{eqnarray*}
+	comb_a(P_1,P_2)=\{t_1P_1+t_2P_2\;|\;t_1+t_2=1\}=\{tP_1+(1-t)P_2\;|\; t\in \K\}=\\
+	=\{P_1+(1-t)(P_2-P_1)\;|\; t\in \K\},
+ \end{eqnarray*}
+ \end{example}
+
+ che è la retta passante per $P_1$ e $P_2.$ Analogamente la combinazione affine di tre punti non allineati
+ è il piano passante per essi.
+ 
+	\subsection{Sottospazi affini}
+ 
+ Un sottoinsieme $H$ di $A$ si dice sottospazio affine se è chiuso per combinazioni affini.
+ 
+ \vspace{0.5cm}
+ 
+ \begin{remark}
+ L'intersezione di sottospazi affini è un sottospazio affine.
+ \end{remark}
+ 
+ \vspace{0.5cm}
+ 
+ \begin{example}
+ Sia $P\in A$, e sia $W$ un sottospazio di $V.$ Allora
+ $$F^{-1}_{P_0}(W)=\{P\in A\;|\}\vet{P_0P}\in W=\{P\in V\;|\;P=P_0+w, w\in W\}.$$
+ Dunque $F^{-1}_{P_0}(P_0+W)=W$.
+ \end{example}
+ 
+ \vspace{0.5cm}
+ 
+ \begin{remark}
+ $P_0+W=\{\tau_w(P_0)\;|\;w\in W\}$.
+ \end{remark}
+ 
+ \vspace{0.5cm}
+ 
+ \begin{proposition}
+ $P_0+W$ è chiuso per combinazioni affini.
+ \end{proposition}
+ 
+ \begin{proof}
+ Siano $P_0+w_1,\dots,P_0+w_n\in P_0+W$ e $t_1+\ldots+t_n=1$. Allora
+ 
+ \[
+	\sum_{i=1}^nt_i(P_0+w_i)=P_0+\sum_{i=1}^nt_i\vet{P_0(P_0+w_i)}=P_0+\sum_{i=1}^nt_iw_i\in P_0+W.
+ \]
+ \end{proof}
+ 
+ \subsection{Giacitura}
+ 
+ \begin{proposition}
+ Sia $H$ un sottospazio affine di $A$. Allora esiste un unico sottospazio vettoriale
+ $W_H$ di $V$,  detto giacitura di $H$, tale che $\forall P\in H\quad H=P_0+W_H$.
+ \end{proposition}
+ 
+ \begin{proof}
+ Dato $P_0\in H$, si cerca $W_H$ tale che verifichi la tesi.
+ Poiché $P_0+W_H=F^{-1}_{P_0}(W_H)$, necessariamente
+ \[
+	W_H=F_{P_0}(H)=\{w\in V\;|\; P_0+w\in H\}.
+ \]
+ Bisogna verificare che $W_H$ sia un sottospazio di $V.$
+ Dati $w_1,w_2\in W_H$ e $\alpha_1,\alpha_2\in \K,$ si ha che $P_0+w_1\in H$ e che
+ $P_0+w_2\in H$. Ma allora
+ \begin{eqnarray*}
+	P_0+\alpha_1w_1+\alpha_2w_2=P_0+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}=\\
+	=P_0+(1-\alpha_1-\alpha_2)\vet{P_0P_0}+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}=\\
+	=F^{-1}_{P_0}((1-\alpha_1-\alpha_2)\vet{P_0P_0}+\alpha_1\vet{P_0(P_0+w_1)}+\alpha_2\vet{P_0(P_0+w_2)}\in H
+ \end{eqnarray*}
+
+ in quanto combinazione affine di $P_0,P_0+w_1$ e $P_0+w_2\in W_H$.
+ Quanto all'unicità, bisogna verificare che il ragionamento fatto non dipenda dall'elemento di $H$ scelto, ossia che dati
+ $P_1,P_2\in H$ valga che $F_{P_1}(H)=F_{P_2}(H)$.
+ Ma $F_{P_1}(H)=\{\vet{P_1Q}\;|\; Q\in H\},$ e se $\vet{P_1Q}\in F_{P_1}(H)$ si ha che
+ $$\vet{P_1Q}=\vet{P_1P_2}+\vet{P_2Q}=-\vet{P_2P_1}+\vet{P_2Q}\in F_{P_2}(H),$$
+ pertanto $F_{P_1}(H)\in F_{P_2}(H)$, ed analogamente si dimostra l'inclusione inversa.
+ \end{proof}
+ 
+ \begin{definition}
+ Se $H\subseteq A$ è sottospazio affine, si pone $dim\;H=dim\;W_{H}$.
+ \begin{itemize}
+	\item $H$ è detto retta se $dim\;H = 1$,
+	\item $H$ è detto piano se $dim\;H = 2$,
+	\item $H$ è detto iperpiano se $dim\;H = dim\;A-1$.
+ \end{itemize}
+ \end{definition}
+ 
+ \begin{remark}
+ Se $H, L \subseteq A \text{ tali che } H\cap L \neq \emptyset$ sono sottospazi affini, allora
+ $W_{H\cap L}=W_H\cap W_L$.
+ \end{remark}
+ 
+ \begin{definition}
+ Due sottospazi affini si dicono:
+ \begin{description}
+	\item[\textbullet\ incidenti] se $H\cap L \neq 0$,
+	\item[\textbullet\ paralleli] se $W_H\subseteq W_L\ \vee\ W_L\subseteq W_H$.
+ \end{description}
+ \end{definition}
+ 
+ \begin{remark}
+ il parallelismo in generale non è una relazione transitiva, quindi neanche d'equivalenza.
+ \end{remark}
+
+ \begin{proposition}
+ Dati $P_0,\dots,P_k$,
+ \[
+	comb_a(P_0,\dots,P_k)= P_0+Span(\vet{P_0P_1},\dots,\vet{P_0P_k}).
+ \]
+ \end{proposition}
+ 
+ \begin{proof}
+ Per definizione di combinazione affine vale $\subseteq$. Per il $\supseteq$ si ha
+ \[
+	P_0+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k} 
+		=P_0+\left(1-\sum_{i=1}^{k}t_i\right)+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k},
+ \]
+ che sta in $comb_a(P_0,\dots,P_k)$, $\forall t_1,\dots,t_k\in \K.$
+ \end{proof}
+ 
+ Più in generale, ponendo $comb_a(X)$ l'insieme di combinazioni affini di tutti i possibili sottoinsiemi finiti di $X$
+ si ottiene l'analogo della proposizione appena dimostrata.
+ 
+ \begin{definition}
+	poniamo $H+L = comb_a(H\cup L)$.
+ \end{definition}
+ 
+ \begin{proposition}[Giacitura di $H+L$] Se $H,L\subseteq A$ sono sottospazi affini, allora
+ $\forall P\in H$ e $\forall Q \in L$ si ha che
+ \[
+	W_{H+L}=W_H+W_L+Span(\vet{PQ}).
+ \]
+ \end{proposition}
+
+ \begin{proof}
+  $H\subseteq H+L \Rightarrow W_H \subseteq W_{H+L}$, $W_L \subseteq W_{H+L}$ ; inoltre si ha che
+ $comb_a(P,Q)\subseteq H+L \Rightarrow W_{\vet{PQ}}\subseteq W_{H+L}$; quindi vale l'inclusione
+ \[
+	W_{H+L}\supseteq W_H+W_L+Span(\vet{PQ}).
+ \]
+ Sia ora $S=P+W_H+W_L+Span(\vet{PQ})$. Si ha che $S\supseteq P+W_H = H$; e, poiché $Q= P+ \vet{PQ}\in S$,
+ $L=Q+W_L \subseteq Q+W_H+W_L+Span(\vet{PQ})=S$. Ciò significa che $S\supseteq H+L$ per definizione di combinazione
+ affine.
+ \end{proof}
+ 
+ \begin{lemma}
+  $H,L\subseteq A$ sottospazi affini, allora vale che
+ \[
+	H\cap L = \emptyset\quad \Leftrightarrow\quad \forall P\in H, Q \in L,\ \vet{PQ}\notin W_H+W_L.
+ \]
+ \end{lemma}
+ 
+ \begin{proof}
+ Se per assurdo esistessero $P\in H \text{e} Q\in L \text{ tali che } \vet{PQ}=w_1+w_2$ in modo che
+ $w_1\in W_H, w_2\in W_L$, si avrebbe che $H \ni P+w_1 = P+(\vet{PQ}-w_2) = Q - w_2 \in L.$
+ 
+ Viceversa, se $\exists R \in H \cap L$, presi $P\in H, Q \in L$ si ha che $H=P+W_H,L=Q+W_L$ quindi
+ $\vet{PQ}=\vet{PR}+\vet{RQ}\in W_H+W_L$.
+ \end{proof}
+ 
+ \begin{proposition}[Formula di Gra\ss mann affine]
+Dati $H,L\subseteq A$ sottospazi affini si ha che
+ \begin{enumerate}[label=\bf\Roman*)]
+	\item $H\cap L \neq \emptyset, \ dim\;(H+L)=dim\;H+dim\;L-dim\;(H\cap L)+1$;\label{GrassAffnote}
+	\item $H\cap L = \emptyset, \ dim\;{H+L}=dim\;H+dim\;L+1$.\label{GrassAffemp}
+ \end{enumerate}
+ \end{proposition}
+ 
+ \begin{proof}
+  $dim\;(H+L)= dim\;W_{H+L}$, $W_{H+L}=W_H+W_L+Span(\vet{PQ}),$ quindi si ha che:
+ \begin{description}
+	\item[\ref{GrassAffnote}] per il lemma otteniamo che $\vet{PQ}\in W_H+W_L$ cioè $W_{H+L}=W_L+W_H$
+		da cui la tesi discende dalla formula di Gra\ss mann vettoriale;
+	\item[\ref{GrassAffemp}] in questo caso $\vet{PQ}\notin W_H+W_L$ allora $dim\;W_{H+L}=dim\;(W_L+W_H)+1$
+		e la tesi si ha ancora per la formula di Gra\ss mann vettoriale.
+ \end{description}
+ \end{proof}
+
+ \begin{definition}
+  $H,L$ si dicono sghembi se  $H\cap L = \emptyset$ e $W_H \cap W_L = \{0\}$.
+ \end{definition}
+ 
+	\subsection{Riferimenti affini}
+ 
+ \begin{definition}
+ Dati i punti $P_0,\dots, P_k\in A,$ essi si dicono affinemente indipendenti se si ha
+ $dim\;comb_a(P_0,\dots,P_k)=k$.
+ \end{definition}
+ 
+ \begin{definition}
+ Sia $n=dim\;A$. Ogni $n+1$-upla di punti $\{P_0,\dots, P_n\}$
+ che siano affinemente indipendenti.
+ \end{definition}
+ 
+ \begin{remark}[passaggio da un riferimento affine ad base di vettori]
+ Se $\{P_0,\dots, P_n\}$ è un riferimento affine, allora
+ $\{\vet{P_0P_1},\dots,\vet{P_0P_n}\}$ è una base di $V$. Viceversa, se $\{v_1,\dots,v_n\}$ è una base di
+ $V$ e $P\in A$ , allora $\{P,P+v_1,\dots,P+v_n\}$ è un riferimento affine. In particolare se
+ $A=V=\K^n$, $\{0,e_1,\dots,e_n\}$ è detto riferimento affine standard.
+ \end{remark}
+ 
+ \begin{proposition}
+ Se $R=\{P_0,\dots,P_k\}$ è un riferimento affine di $A$, allora
+ \[
+	\forall P\in A, \exists ! a_0,\dots,a_n\in \K :\ P=a_0P_0+\dots+a_nP_n.
+ \]
+ In particolare, la $n+1$-upla $a_0,\dots,a_n$ sono detti coefficienti affini di $P$
+ rispetto a $R$.
+ \end{proposition}
+ 
+ \begin{proof}
+ Per ipotesi, $A=comb_a(P_0,\dots,P_n)$ quindi esistono sicuramente dei coefficienti per ogni
+ $P\in A$. Per mostrare che sono unici, basta spostarsi nello spazio vettoriale
+ $V$ con il procedimento mostrato nella nota precedente.
+ \end{proof}
+
+	\section{Trasformazioni affini}
+	
+ Siano $A$ uno spazio affine su $V$ e $B$ uno spazio affine su $W,$ dove $V$ e
+ $W$ sono spazi vettoriali sul campo $\K.$
+ 
+ \begin{definition}
+ Si dice trasformazione affine una funzione $f:A\to B$ che conserva le combinazioni affini.
+ \end{definition}
+ 
+ \begin{definition}
+ Una trasformazione affine biunivoca si dice isomorfismo affine.
+ \end{definition}
+ 
+ \begin{definition}
+ Un isomorfismo affine da uno spazio affine in sé si dice affinità. Si definisce inoltre
+ $\Aff{A}=\{f:A\to A\;|\; f\; \text{ è un'affinità}\}.$
+ \end{definition}
+ 
+ \begin{example}
+ \begin{enumerate}[label=\bf\Roman*)]
+  \item Le traslazioni sono affinità.
+  \item Se $R$ è un riferimento affine, la funzione
+   \begin{eqnarray*}
+  [\quad]_R:A & \to & \K^n \\
+  P & \mapsto & [P]_R
+ \end{eqnarray*}
+  (dove $[P]_R$ sono le coordinate affini di $P$ rispetto a $R)$ è un isomorfismo affine;
+ esso manda i punti di $R$ in $0,e_1,\ldots,e_n.$
+ \end{enumerate}
+ \end{example}
+ 
+ \begin{proposition}
+ Se $V$ è uno spazio vettoriale, $f:V\to V$ è un'affinità e $f(0)=0,$ allora
+ $f$ è lineare.
+ \end{proposition}
+ \begin{proof}
+ $\forall v_1,v_2\in V\quad\forall t_1,t_2\in \K$ vale che:
+ 
+ \begin{eqnarray*}
+	& f(t_1v_1+t_2v_2)=f((1-t_1-t_2)\cdotp 0+t_1v_1+t_2v_2=\\
+	& =(1-t_1-t_2)f(0)+t_1f(v_1)+t_2f(v_2)=t_1f(v_1)+t_2f(v_2).
+ \end{eqnarray*}
+ \end{proof}
+ 
+ \begin{proposition}
+ Se $f\in \Aff{v}$ allora esistono e sono unici $v\in V$ e $g\in GL(V)$ tali che
+ $f=\tau_v\circ g.$
+ \end{proposition}
+ 
+ \begin{proof}
+ Sia $v=f(0).$ Allora $g=\tau_{-v}\circ f\in \Aff{V}$ e $g(0)=0,$
+ quindi per la proposizione precedente $g\in GL(V).$
+ Da tale proposizione segue che 
+ \[
+	\Aff{V}\{\tau_v\circ f\;|\;v\in V,f\in GL(V)\}.
+ \]
+ Di conseguenza $\Aff{V}$ è il gruppo generato da $T(V)$ e da $GL(V).$
+ In particolare 
+ \[
+	\Aff{\K^n}=\{X\mapsto AX+B \; |\; A\in GL(n,\K),B\in \K^n\}.
+ \]
+ \end{proof}
+ 
+\begin{proposition}
+Dato uno spazio $A$ affine su $V$ e dati i riferimenti affini $L=(P_0,P_1,\ldots,P_n)$
+ e $M=(Q_0,Q_1,\ldots,Q_n)$ esiste un'unica affinità $f\in \Aff{A}$ tale che
+ $\forall i=0,\ldots,n\ f(P_i)=Q_i.$
+ \end{proposition}
+ 
+ \begin{proof}
+ Consideriamo le trasformazioni invertibili $F_{P_0}:A\rightarrow V$ e $F_{Q_0}:A\rightarrow V$,
+ allora si ha che $F_{P_0}(L)=(0,\vet{P_0P_1},\dots,\vet{P_0P_n})=(0,B)$ dove $B\in V$ è un vettore
+ di dimensione $n$; similmente $F_{Q_0}(M)=(0,C).$
+ 
+ Ora, $B,C$, per motivi dimensionali, sono basi dello spazio $V$, pertanto esiste un unico endomorfismo lineare
+ $g$ che mappa $B$ in $C$. Infine, sia $\tau:V\rightarrow V$ la traslazione del vettore
+ $\vet{P_0Q_0}$. Mostriamo che la mappa $f:A\rightarrow A$ definita da
+ \[
+	f = F_{P_0}^{-1} \circ \tau \circ g \circ F_{P_0}
+ \]
+ soddisfa le condizioni richieste:
+ \begin{eqnarray*}
+	&&f(P_0)=F_{P_0}^{-1} \circ \tau \circ g (0) = F_{P_0}^{-1} \circ \tau (0) = F_{P_0}^{-1} (\vet{P_0Q_0}) = Q_0\\
+	&&f(P_i)=F_{P_0}^{-1} \circ \tau \circ g (\vet{P_0P_i}) = F_{P_0}^{-1} \circ \tau (\vet{Q_0Q_i}) = F_{P_0}^{-1} (\vet{P_0Q_i}) = Q_i)
+ \end{eqnarray*}
+ $\forall i=1,\dots,n.$
+ Mostriamo che conserva anche le combinazioni affini, in particolare basta mostrare che conserva quelle di punti in $L$:
+ \begin{eqnarray*}
+	f\left(\sum_{i=0}^{n}t_iP_i\right)&=&F_{P_0}^{-1} \circ \tau \circ g \left(\sum_{i=0}^{n}t_i\vet{P_0P_i}\right)\\
+	&=&F_{P_0}^{-1} \circ \tau \left( \sum_{i=0}^{n}t_i\vet{Q_0Q_i}\right) \\
+	&=&F_{P_0}^{-1} \left(\sum_{i=0}^{n}t_i\vet{P_0Q_i}\right)\\
+	&=&\sum_{i=0}^{n}t_iQ_i.
+ \end{eqnarray*}
+ 
+ D'altra parte, si verifica facilmente che se esiste $f$ siffatta, allora l'applicazione $j:V\rightarrow V$ 
+ definita
+ \[
+	j = \tau^{-1} \circ F_{P_0} \circ f \circ F_{P_0}
+ \]
+ manda  $\vet{P_0P_i}$ in $\vet{Q_0Q_i}\ \forall i=1,\dots,n$
+ e che è lineare (la verifica è del tutto analoga ai passaggi appena descritti). Da ciò segue quindi che  $g=j$ 
+ cioè l'unicità.
+ \end{proof}
+ 
+	\subsection{Gruppo delle affinità}
+ 
+ \begin{definition}[gruppo delle affinità]
+ consideriamo il seguente insieme
+ \[
+	\Aff{\K^n}=\{x\mapsto Mx+N : M\in GL{\K^n}, N\in \K^n\}
+ \]
+ e l'operazione di composizione $\circ$: la coppia $(\Aff{\K^n},\circ))$ si dice gruppo delle affinità di $\K^n$.
+ \end{definition}
+ 
+ \begin{remark}
+ la mappa $\phi:\K^n\rightarrow \K^{n+1}$, $x\mapsto\left( \begin{matrix}
+                                                              x\\
+                                                              \hline
+                                                              1
+                                                             \end{matrix} \right)
+$ è un isomorfismo affine tra $\K^n$ e
+$H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
+ \end{remark}
+ 
+ Vogliamo ora far vedere che questo isomorfismo è più profondo di quanto non appaia a prima vista. In particolare cercheremo di studiare
+ la relazione tra le trasformazioni affini in $\K^n$ e le trasformazioni lineari in $\K^{n+1}$ arrivando ad identificare
+ $\Aff{\K^n}$ con un sottogruppo di $GL(n,\K)$.
+ 
+ \begin{definition}
+  $G(H)=\{g\in GL(n+1,\K):g(H)=H\}$.
+ \end{definition}
+ 
+ \begin{remark}
+ \`E immediato verificare che  $G(H)$ è un sottogruppo di  $GL(n+1,\K)$,
+ dato che composizione ed inverse di mappe che conservano $H$ a loro volta lo conservano.
+ \end{remark}
+ 
+ \begin{remark}
+ Se scomponiamo  $g\in G(H)$ in blocchi in questo modo:
+ \[
+	g = \left(
+		\begin{array}{cc}
+		M & N \\ 
+		^tp & q
+		\end{array}
+	\right)
+ \]
+  dove $M\in M(n,\K);\  N,p\in \K^n,\ q \in \K$, e se vogliamo che  $g$ fissi $H$
+ allora si deve avere che la $n+1$ -esima componente di $g\left( \begin{matrix}
+                                                              x\\
+                                                              \hline
+                                                              1
+                                                             \end{matrix} \right)$ sia ancora $1$,
+ cioè che  $\forall x\in \K^n\  ^tpx+q=1$, cioè che $p=0, q=1$.
+ \end{remark}
+ 
+ \begin{proposition}
+ sia  $\Phi:\Aff{\K^n}\rightarrow G(H)$ definito da
+ \[
+	\Phi(x\mapsto Mx+N)=\left(
+		\begin{array}{cc}
+		M & N \\ 
+		0 & 1
+		\end{array}
+	\right)
+ \]
+ è un isomorfismo di gruppi.
+ \end{proposition}
+ 
+ \begin{proof}
+ Per prima cosa è immediato vedere che $\Phi$  è iniettivo dato che il nucleo contiene solo l'identità.
+ La surgettività ci è fornita dalla precedente osservazione. Rimane da far vedere che questo operatore commuta con la composizione.
+ Date due affinità $a:x\mapsto Mx+N$ e $a':x\mapsto M'x+N',$ si ha che
+ \[
+	a\circ a':x\mapsto MM'x+ MN'+N
+ \]
+ quindi
+ \[
+	\Phi(a)\circ\Phi(a')=\left(
+		\begin{array}{cc}
+		MM' & MN'+N \\ 
+		0 & 1
+		\end{array}
+	\right)=\Phi(a\circ a').
+ \]
+ \end{proof}
+ 

@@ -1,0 +1,197 @@
+\section{Equivalenza affine}
+
+\begin{definition}[Equivalenza rispetto a $G$]
+	Se $G$ è un gruppo di trasformazioni di $\K^n$ e $F_1$ e $F_2$ sono sottoinsiemi di $\K^n$ allora $F_1$ e $F_2$ si dicono equivalenti per 
+	$G$ se $\exists g\in G$ tale che $g(F_1)=F_2$.
+\end{definition}
+
+In particolare:
+
+\begin{definition}
+	$F_1,F_2\in\K^n$ si dicono affinemente equivalenti se $\exists g \in \Aff{\K^n}$ tale che $g(F_1) = F_2 .$
+	Analogamente $F_1 , F_2 \in \K^n$ si dicono metricamente equivalenti se $\exists g \in \Isom{\K^n}$ tale che $g(F_1) = F_2 .$
+\end{definition}
+\begin{remark}
+	In generale, data una classe di oggetti $X$ e un gruppo $G$ che agisce su $X$ (per esempio mediante applicazione a sinistra: $gx=g(x)$),
+	otteniamo naturalmente una relazione di equivalenza dentro $X$ data da $x_1\sim x_2$ quando esiste $g\in G$ tale che $ x_1 = gx_2$.
+	Le classi di equivalenza sono dette orbite dell'azione di $G$ in $X$. Studiamo in questi appunti le classi così ottenute dall'azione
+	di particolari applicazioni di uno spazio vettoriale sull'insieme di ipersuperfici affini.
+\end{remark}
+
+
+
+
+\begin{definition}[Supporto di un polinomio]
+	Dato $g\in \K[x_1,\dots,x_n]$ chiamiamo supporto di $g$ in $\K^n$ l'insieme $V(g)=\{x\in \K^n : g(x)=0\}$.
+\end{definition}
+
+\begin{definition}[Polinomi proporzionali]
+	Dati $g_1,g_2\in \K[x_1,\dots,x_n]$ diciamo che sono proporzionali $(g_1\sim g_2)$ se $\exists \alpha \in \K^{*}$ tale che $g_1=\alpha g_2$.
+\end{definition}
+\begin{remark}
+	\'E facile verificare che $\sim$ è una relazione di equivalenza
+	(discende banalmente dal fatto che $\K^{*}$ è un gruppo rispetto la moltiplicazione).
+\end{remark}
+
+\begin{definition}[Ipersuperficie affine]
+	Ogni classe di equivalenza di polinomi $[g]$ in $\K[x_1,\dots,x_n]$ rispetto $\sim$ è detta ipersuperficie.
+	Inoltre $g(x)=0$ è detta equazione dell'ipersuperficie
+\end{definition}
+
+\begin{definition}[Ipersuperfici affinemente equivalenti]
+	Date due ipersuperfici affini $[g],[h]$, si dicono affinemente equivalenti se esiste $\Psi\in \Aff{\K^n}$ tale che $[g]=[f\circ\Psi]$.
+	In tal caso indicheremo $g\affeq h$
+\end{definition}
+\begin{remark}
+	Useremo anche la notazione $\Psi^{-1}[g]$ per una ipersuperficie equivalente a $[g]$ mediante l'affinità $\Psi \in \Aff{K^n}$.
+\end{remark}
+\begin{remark}
+	Anche in questo caso è facile verificare che la relazione $\affeq$ è di equivalenza, dato che $\Aff{\K^n}$ è un gruppo.
+\end{remark}
+\begin{remark}
+	Notiamo che $[g]\affeq [h]\Rightarrow \text{deg}(g)=\text{deg}(h)$,
+	poiché il grado di $g(\Psi(x))$ non può essere più grande di quello di $g(x)$, e il viceversa vale per l'invertibilità di $\Psi$.
+\end{remark}
+
+A questo punto passiamo allo studio di alcune ipersuperfici affini tra le più importanti. In particolare tratteremo il caso in cui le ipersuperfici
+sono di primo grado e quello in cui sono di grado due (dette quadriche) nei casi particolari in cui $\K=\R$ oppure $\K=\C$.
+
+\begin{proposition}[Grado $1$]
+	Tutti i polinomi di primo grado sono affinemente equivalenti;
+	ossia esiste un'unica classe di equivalenza per le ipersuperfici di primo grado.
+\end{proposition}
+
+\begin{proof}
+	Notiamo preliminarmente che un polinomio di primo grado possiamo denotarlo con $g(x)=\tra{A}x+b$ dove $A\in \K^n$, $A\neq 0$ e $b\in \K$.
+	Consideriamo ora il polinomio $h(x)=\tra{A'}x+b'$ e cerchiamo $\Psi\in\Aff{K^n}$ tale che $g\circ \Psi = h$, ovvero che
+	\[
+		\tra{A}(Mx+N)+b=\tra{A'}x+b'
+	\]
+	dove $M\in \GL{\K^n}$ e $N\in \K^n$. In particolare vogliamo che esistano tali $M$ e $N$.
+	Ma è ovvio che esiste $M$ tale che $\tra{A}M=\tra{A'}$ e $N$ tale che $\tra{A}N+b=b'$ dato che $A\neq 0$.
+\end{proof}
+
+
+\section{Quadriche reali e complesse}
+
+Consideriamo ora il caso delle quadriche, ossia le ipersuperfici $[g]$ dove $g\in \K^n[x_1,\dots x_n]$
+(qui $\K$ è il campo dei reali o dei complessi) e deg$(g)=2$. Cominciamo con
+\begin{remark}
+	Se $g$ è una quadrica, allora esistono $A\in M(n,\K)$ $A$ simmetrica e non nulla, $B\in \K^n$, $c\in \K$ tali che
+	\[
+		g(x) = \tra{x}Ax+2\tra{B}x+c.
+	\]
+\end{remark}
+
+\begin{remark}\label{oss:isomf}
+	Con un'altra osservazione possiamo ridurre ancora la notazione. Consideriamo $Q\in M(n+1,\K)$ associata al polinomio di secondo grado $g$:
+	\[
+		Q=\left(
+			\begin{array}{cc}
+			A & B\\
+			\tra{B} & c
+			\end{array}
+		\right)
+	\]
+	e consideriamo anche $\tilde{x} =\left(\begin{smallmatrix}
+x \\
+1
+\end{smallmatrix}
+\right)$. Allora $g(x)=\tra{\tilde{x}}Q\tilde{x}$.
+\end{remark}
+
+\begin{definition}[Cono]
+	Sia $X\subseteq V$ con $V$ uno spazio vettoriale. Diciamo che $X$ è un cono se $x\in X\Rightarrow \lambda x\in X$ per ogni $\lambda \in \K$.
+\end{definition}
+\begin{lemma}
+	Se $g(x)=\tra{x}Qx$ allora $V(g)$ è un cono.
+\end{lemma}
+\begin{proof}
+	Ovvio per l'omogeneità di $g(x)$.
+\end{proof}
+
+Data la \cref{oss:isomf}, possiamo equivalentemente parlare dello studio delle quadriche di $\K^n$ come delle quadriche omogenee in $\K^{n+1}$.
+Consideriamo finalmente il cambiamento di forma delle  quadriche via affinità.
+
+\begin{lemma}\label{lem:cambioaffine}
+	Data una quadrica $g$ a cui è associata la matrice $Q$ e una affinità $\Psi(x)=Mx+N$ a cui è possibile  associare la matrice
+	$\tilde M_N = \left(\begin{smallmatrix}
+M & N \\ 0 & 1
+\end{smallmatrix}
+\right)$ allora 
+	$g\circ \Psi = \tra{\tilde M_N}Q \tilde M_N$.
+\end{lemma}
+\begin{proof}
+	Basta fare un semplice conto: $g(\Psi(x))=\tra{\Psi(x)}Q \Psi(x) = \tra{x}\tra{\tilde M_N}Q \tilde M_N x$ da cui la tesi.
+	Tuttavia se svolgiamo il conto tenendo presente che  $\tilde M_N$ e $Q$ sono matrici $n+1\times n+1$ otteniamo
+	\[
+		\tra{\tilde M_N}Q \tilde M_N = 
+		\left(
+			\begin{array}{cc}
+			\tra{M} & 0\\
+			\tra{N} & 1
+			\end{array}
+		\right)
+		\left(
+			\begin{array}{cc}
+			A & B\\
+			\tra{B} & c
+			\end{array}
+		\right)
+		\left(
+			\begin{array}{cc}
+			M & N\\
+			0 & 1
+			\end{array}
+		\right) =
+		\left(
+			\begin{array}{cc}
+			\tra{M}AM & \tra{M}AN+\tra{M}B\\
+			\tra{(\tra{M}AN+\tra{M}B)}& \tra{N}AN+2\tra{B}N+c
+			\end{array}
+		\right)
+	\]
+
+\end{proof}
+
+\begin{definition}[Conica a centro]
+	Una conica $\mathfrak{C}=[g]$ è detta a centro se $\exists N\in \K^n$ tale che $g(x)=g(2N-x)$, ossia $\mathfrak{C}$ è invariante per la
+	simmetria centrale rispetto a $N$.
+\end{definition}
+
+\begin{lemma}\label{lem:centroconica}
+	Se $0$ è centro della conica $\mathfrak{C}=[g]$ e $g=\tra{x}Ax+2Bx+C$, allora $B=0$.
+\end{lemma}
+
+\begin{proof}
+	Per definizione di centro della conica si deve avere  $g(x)=g(-x)$ cioè $\tra{x}Ax+2Bx+C=\tra{-x}A(-x)+2B(-x)+C$, $4Bx=0$ che deve essere vero
+	per ogni scelta di $x$, quindi si ha la tesi.
+\end{proof}
+
+\begin{remark}\label{oss:invarianti}
+	Dal \cref{lem:cambioaffine} si ha facilmente che invarianti per congruenza sono conservate anche per trasformazioni affini sulle quadriche.
+	In particolare, se $\K = \C$ il rango delle matrici $Q$ e $A$ è invariante per trasformazioni affini;
+	se $\K= \R$, il rango e l'indice di Witt delle matrici $Q$ e $A$ sono entrambi invarianti.
+\end{remark}
+
+\begin{theorem}[Grado $2$, dimensione $2$]
+	Gli invarianti descritti in \cref{oss:invarianti} descrivono univocamente le classi di quadriche su $\K=\R$ o $\K=\C$.
+\end{theorem}
+\begin{proof}
+	Il fatto che invarianti diversi comportino classi diverse è la \cref{oss:invarianti}.
+	Mostrare il contrario è una questione di un po' di pazienza: basta considerare tutti i casi, tenendo presente del caso coniche non a centro
+	e coniche a centro; in quest'ultimo aiuta molto il \cref{lem:centroconica}, applicabile dopo una traslazione opportuna che manda il centro
+	in $0$.
+\end{proof}
+
+\begin{remark}
+	A titolo di curiosità, si usa questa nomenclatura per la classificazione delle quadriche:
+	\begin{description}
+	 \item[paraboloidi] sono quadriche non a centro;
+	 \item[ellissoidi] sono quadriche reali con indice di Witt nullo;
+	 \item[iperboloidi] sono le altre quadriche reali;
+	 \item[???] e chi più ne ha, più ne metta!
+	\end{description}
+\end{remark}
+
+
