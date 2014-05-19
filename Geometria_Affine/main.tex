@@ -133,7 +133,7 @@ x \\
 Data la \cref{oss:isomf}, possiamo equivalentemente parlare dello studio delle quadriche di $\K^n$ come delle quadriche omogenee in $\K^{n+1}$.
 Consideriamo finalmente il cambiamento di forma delle  quadriche via affinità.
 
-\begin{lemma}
+\begin{lemma}\label{lem:cambioaffine}
 	Data una quadrica $g$ a cui è associata la matrice $Q$ e una affinità $\Psi(x)=Mx+N$ a cui è possibile  associare la matrice
 	$\tilde M_N = \left(\begin{smallmatrix}
 M & N \\ 0 & 1
@@ -179,13 +179,40 @@ M & N \\ 0 & 1
 	simmetria centrale rispetto a $N$.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{lem:centroconica}
 	Se $0$ è centro della conica $\mathfrak{C}=[g]$ e $g=\tra{x}Ax+2Bx+C$, allora $B=0$.
 \end{lemma}
 
 \begin{proof}
-	
+	Per definizione di centro della conica si deve avere  $g(x)=g(-x)$ cioè $\tra{x}Ax+2Bx+C=\tra{-x}A(-x)+2B(-x)+C$, $4Bx=0$ che deve essere vero
+	per ogni scelta di $x$, quindi si ha la tesi.
 \end{proof}
+
+\begin{remark}\label{oss:invarianti}
+	Dal \cref{lem:cambioaffine} si ha facilmente che invarianti per congruenza sono conservate anche per trasformazioni affini sulle quadriche.
+	In particolare, se $\K = \C$ il rango delle matrici $Q$ e $A$ è invariante per trasformazioni affini;
+	se $\K= \R$, il rango e l'indice di Witt delle matrici $Q$ e $A$ sono entrambi invarianti.
+\end{remark}
+
+\begin{theorem}[Grado $2$, dimensione $2$]
+	Gli invarianti descritti in \cref{oss:invarianti} descrivono univocamente le classi di quadriche su $\K=\R$ o $\K=\C$.
+\end{theorem}
+\begin{proof}
+	Il fatto che invarianti diversi comportino classi diverse è la \cref{oss:invarianti}.
+	Mostrare il contrario è una questione di un po' di pazienza: basta considerare tutti i casi, tenendo presente del caso coniche non a centro
+	e coniche a centro; in quest'ultimo aiuta molto il \cref{lem:centroconica}, applicabile dopo una traslazione opportuna che manda il centro
+	in $0$.
+\end{proof}
+
+\begin{remark}
+	A titolo di curiosità, si usa questa nomenclatura per la classificazione delle quadriche:
+	\begin{description}
+	 \item[paraboloidi] sono quadriche non a centro;
+	 \item[ellissoidi] sono quadriche reali con indice di Witt nullo;
+	 \item[iperboloidi] sono le altre quadriche reali;
+	 \item[???] e chi più ne ha, più ne metta!
+	\end{description}
+\end{remark}
 
 
 \end{document}
