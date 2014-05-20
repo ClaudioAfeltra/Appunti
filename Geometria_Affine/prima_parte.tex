@@ -114,7 +114,7 @@ $\Isom{ V,\phi}$ è un gruppo di trasformazioni.
  \end{corollary}
  
  
-\section{Isometrie di }%$\R^n$}
+\section{Isometrie di $\R^n$}
  
  Si consideri adesso come caso particolare $\R^n$ dotato del prodotto scalare ordinario.
  Il \cref{thm:isometrie} allora implica che $$\Isom{ \R^n}=\{X\mapsto AX+B|A\in O(n),B\in \R^n\}.$$
@@ -217,13 +217,13 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
  \end{exercise}
  
  \begin{theorem}
- Ogni $f\in \Isom{ R^n}$ è composizione di al più $n+1$ riflessioni
+ Ogni $f\in \Isom{ \R^n}$ è composizione di al più $n+1$ riflessioni
  \end{theorem}
  
  \begin{proof}
  Se $f(0)=0$, allora $f\in O(n)$, dunque è composizione di al più $n$ 
  riflessioni.
- Se $f(0)=B\ne 0$, sia $H=\{X\in R^n|\;d(X,0)=d(X,B)\}$.
+ Se $f(0)=B\ne 0$, sia $H=\{X\in \R^n|\;d(X,0)=d(X,B)\}$.
  $H$ è un iperpiano. Infatti 
  \[
   \quad x\in H\Longleftrightarrow ||x||^2=||x-B||^2\Longleftrightarrow\langle x,x\rangle=
@@ -236,7 +236,7 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
  
  \[ \left\{
  \begin{array}{l}
-  \rho_H\circ f\in \Isom{ R^n} \\
+  \rho_H\circ f\in \Isom{ \R^n} \\
   (\rho_H\circ f)(0)=\rho_H(B)=0
  \end{array}
  \right.
@@ -252,11 +252,11 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
  \end{definition}
  
  \begin{proposition}
- Se $f\in \Isom{ R^n}$ ha almeno un punto fisso, è composizione di al più $n$ riflessioni.
+ Se $f\in \Isom{ \R^n}$ ha almeno un punto fisso, è composizione di al più $n$ riflessioni.
  \end{proposition}
  
  \begin{proof}
- Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in R^n$
+ Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in \R^n$
  tale che $f(Q)=Q$. Sia inoltre $H$ definito come nella dimostrazione precedente.
  Allora come prima $\rho_H\circ f\in O(n)$, e poiché $d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H$, e pertanto
  $(\rho_h\circ f)(Q)=Q$.
@@ -266,7 +266,7 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
  Dunque $f$ è composizione di al più $n$ riflessioni.
   \end{proof}
 
-	\subsection{Classificazione delle isometrie di }%$\R^2$}
+	\subsection{Classificazione delle isometrie di $\R^2$}
  
  Alcuni esempi di isometrie di $\R^2$ sono:
  \begin{itemize}
@@ -333,7 +333,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  o incidenti.
  \end{remark}
  
-  \subsection{Classificazione delle isometrie di }%$\R^3$}
+  \subsection{Classificazione delle isometrie di $\R^3$}
   
  Alcuni esempi di isometrie di $\R^3$ sono:
  \begin{itemize}
@@ -359,7 +359,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  o avvitamenti.
  \end{theorem}
  
-  \section{Il gruppo di trasformazioni }%$A(V)$}
+  \section{Il gruppo di trasformazioni $A(V)$}
  Dato uno spazio vettoriale $V$ si definisce $A(V)=\{\tau_v\circ f\;|\; v\in V,\; f\in GL(V)\}$.
  È stato già visto che $A(V)$ è un gruppo di trasformazioni, e che coincide con il sottogruppo di $S(V)$
  generato da $T(V)$ e da $GL(V)$.
@@ -824,12 +824,12 @@ Dato uno spazio $A$ affine su $V$ e dati i riferimenti affini $L=(P_0,P_1,\ldots
  \end{definition}
  
  \begin{remark}
- la mappa $\phi:\K^n\rightarrow \K^{n+1}$, $x\mapsto\left( \begin{matrix}
-                                                              x\\
-                                                              \hline
-                                                              1
-                                                             \end{matrix} \right)
-$ è un isomorfismo affine tra $\K^n$ e
+ la mappa $\phi:\K^n\rightarrow \K^{n+1}$, $x\mapsto
+ \left(\begin{smallmatrix}
+	x \\
+	1
+	\end{smallmatrix}\right)$
+è un isomorfismo affine tra $\K^n$ e
 $H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
  \end{remark}
  
@@ -857,11 +857,13 @@ $H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
 	\right)
  \]
   dove $M\in M(n,\K);\  N,p\in \K^n,\ q \in \K$, e se vogliamo che  $g$ fissi $H$
- allora si deve avere che la $n+1$ -esima componente di $g\left( \begin{matrix}
-                                                              x\\
-                                                              \hline
-                                                              1
-                                                             \end{matrix} \right)$ sia ancora $1$,
+ allora si deve avere che la $n+1$ -esima componente di
+ $g\left(\begin{smallmatrix}
+	x \\
+	1
+	\end{smallmatrix}
+	\right)$
+ sia ancora $1$,
  cioè che  $\forall x\in \K^n\  ^tpx+q=1$, cioè che $p=0, q=1$.
  \end{remark}
  
