@@ -133,23 +133,30 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  $g(0)=0$. Dunque, per un teorema visto, $g\in O(V,\phi)$, e pertanto $f=\tau_v\circ g$.
   \end{proof}
  
- \begin{corollary}
-$\Isom{ V,\phi}$ è un gruppo di trasformazioni.
- \end{corollary}
- 
+
  
 \section{Isometrie di $\R^n$}
  
  Si consideri adesso come caso particolare $\R^n$ dotato del prodotto scalare ordinario.
- Il \cref{thm:isometrie} allora implica che $$\Isom{ \R^n}=\{X\mapsto AX+B|A\in O(n),B\in \R^n\}.$$
- Pertanto se $f\in \Isom{ \R^n}$ allora $$Fix(f)=\{X\in \R^n|AX+B=X\}=\{X\in \R^n|(A-I)X=-B\},$$
+ Il \cref{thm:isometrie} allora implica che
+ \[
+	\Isom{ \R^n}=\{X\mapsto AX+B|A\in O(n),B\in \R^n\}.
+ \]
+ Pertanto se $f\in \Isom{ \R^n}$ allora
+ \[
+	Fix(f)=\{X\in \R^n|f(X)=X\}=\{X\in \R^n|(A-I)X=-B\},
+ \]
  quindi o $Fix(f)$ è vuoto, o è un sottospazio affine di $\R^n$ di giacitura
- $$\{X\in \R^n|(A-I)X=0\}=Fix(A).$$
+ \[
+	\{X\in \R^n|(A-I)X=0\}=Fix(A).
+ \]
  
  
 \subsection{Simmetrie}
  
- $f\in \Isom{ \R^n}$ si dice simmetria se $f^2=id$.
+ \begin{definition}
+	$f\in \Isom{ \R^n}$ si dice simmetria se $f^2=id$.
+\end{definition}
  
  \begin{proposition}
  Sia $f$ una simmetria di $\R^n$ tale che $f(X)=AX+B$, con $A\in O(n$).
@@ -170,7 +177,7 @@ $\Isom{ V,\phi}$ è un gruppo di trasformazioni.
  $R^n=V(1,A)\oplus V(-1,A)$. Per definizione si ha che $Fix(A)=V(1,A)$.
  Vogliamo dimostrare che $Fix(A)^{\bot}=V(-1,A)$.  Se $x\in V(-1,A)$ e $y\in V(1,A)$, allora 
   \[
-   \langle x,y\rangle=^txy=^t(-Ax)Ay=-^tx^tAAy=-^txy= -\langle x,y\rangle,
+   \langle x,y\rangle=\tra{x}y=\tra{(-Ax)}Ay=-\tra{x}\tra{A}Ay=-\tra{x}y= -\langle x,y\rangle,
   \]
  pertanto $\langle x,y\rangle=0.$
  Dunque $V(-1,A)\subseteq Fix(A)$. Ma entrambi hanno dimensione
@@ -181,8 +188,11 @@ $\Isom{ V,\phi}$ è un gruppo di trasformazioni.
  
 	\subsection{Riflessioni}
  
- $f\in \Isom { \R^n }$ viene detta riflessione se $f^2=id$ e $Fix(f)$ 
- è un iperpiano affine (ossia se ha dimensione $n-1$).
+ \begin{definition}
+	$f\in \Isom { \R^n }$ viene detta riflessione se $f^2=id$ e $Fix(f)$ 
+	è un iperpiano affine (ossia se ha dimensione $n-1$).
+ \end{definition}
+
  
  \begin{remark}
  Se $f(X)=AX+B$ è una riflessione, $dim(Fix(f))=n-1$, per cui
@@ -218,7 +228,7 @@ Siano $\rho_1(X)=A_1X+B_1$ e $\rho_2(X)=A_2X+B_2$, $Fix(\rho_1)=H_1$ e
  In tal caso $H_1\cap H_2$ è un sottospazio affine di dimensione $n-2$.
  Ma $H_1\cap H_2\subseteq Fix(\rho_1\circ\rho_2)$.
  Inoltre la giacitura di $Fix(\rho_2\circ\rho_1)$ è
- $Fix(A_2A_1)=V(1,A_2A_1)$. Allora $L=V(1,A_2A_1)^{\bot}=V(-1,A_2A_1)$ è invariante per $A_2A_1$.
+ $Fix(A_2A_1)=V(1,A_2A_1)$. Allora $L=V(1,A_2A_1)^{\bot}$ è invariante per $A_2A_1$.
  Pertanto tutti i piani ortogonali a $H_1\cap H_2$ (che hanno giacitura $L$) sono invarianti per
  $\rho_2\circ\rho_1$.
  Per l'esercizio precedente su tali piani $\rho_2\circ\rho_1$ è composizione di riflessioni rispetto a rette incidenti,
@@ -876,7 +886,7 @@ $H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
 	g = \left(
 		\begin{array}{cc}
 		M & N \\ 
-		^tp & q
+		\tra{p} & q
 		\end{array}
 	\right)
  \]
@@ -888,7 +898,7 @@ $H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
 	\end{smallmatrix}
 	\right)$
  sia ancora $1$,
- cioè che  $\forall x\in \K^n\  ^tpx+q=1$, cioè che $p=0, q=1$.
+ cioè che  $\forall x\in \K^n\  \tra{p}x+q=1$, cioè che $p=0, q=1$.
  \end{remark}
  
  \begin{proposition}
