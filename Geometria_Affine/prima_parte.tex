@@ -13,9 +13,7 @@
  \end{example}
  
  \subsection{Traslazioni}
- 
- Esistono trasformazioni naturali e semplici, ma non lineari.
- 
+  
  \begin{definition}
   Dato uno spazio vettoriale $V$ ed un suo elemento $v$ si dice traslazione di vettore $v$ la funzione
  \begin{eqnarray*}
@@ -49,15 +47,41 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
   \end{proof}
   
 	\subsection{Azione di un gruppo}
+
+ In questa parte del corso di Geometria Analitica è interessante studiare come certi gruppi di trasformazioni agiscono su punti o insiemi di punti.
+ Per questo introduciamo brevemente dei concetti astratti di algebra legati alla teoria dei gruppi.
  
- Dato un gruppo $G$ ed un insieme $X$ si dice azione di $G$ su $X$ un omomorfismo
- $\psi:G\to S(x)$.
- L'azione si dice transitiva se  $\forall x,y\in X\;\;\exists g\in G$ tale che  $\psi(g)(x)=y$.
+ \begin{definition}[Azione di un gruppo]
+	Sia $G$ un gruppo e $X$ un insieme. Si definisce azione di $G$ su $X$ un qualunque omomorfismo $\psi: G \rightarrow S(X)$.
+ \end{definition}
  
  \begin{remark}
+	Un'azione $\psi$ di $G$ su $X$ induce la seguente relazione $\sim$:
+	\[
+		x \sim y \Leftrightarrow \exists g\in G : \psi(g)(x)=y;
+	\]
+	ed è facile vedere che $\sim$ è d'equivalenza.
+ \end{remark}
+
+ \begin{definition}[Orbita]
+	Ogni classe $[x]\in X/\!\!\sim$ è detta orbita dell'azione $\psi$.
+ \end{definition}
+ \begin{definition}[Azione transitiva]
+	Un'azione $\psi$ su $X$ si dice transitiva se induce un'unica orbita.
+ \end{definition}
+
+ \begin{example}
  $T(V)$ agisce su $V$ in modo transitivo.
  Infatti se $v,w\in V,\quad\tau_{w-v}(v)=w$.
- \end{remark}
+ \end{example}
+ 
+ \begin{definition}[stabilizzatore]
+	Si definisce stabilizzatore di $x\in X$ il sottogruppo di $G$ dato da
+	\[
+		Stab_G(x) = \{g\in G : \psi(g)(x)=x\}.
+	\]
+ \end{definition}
+
  
 	\subsection{Gruppo delle isometrie}
  
