@@ -75,7 +75,7 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  Infatti se $v,w\in V,\quad\tau_{w-v}(v)=w$.
  \end{example}
  
- \begin{definition}[stabilizzatore]
+ \begin{definition}[Stabilizzatore]
 	Si definisce stabilizzatore di $x\in X$ il sottogruppo di $G$ dato da
 	\[
 		Stab_G(x) = \{g\in G : \psi(g)(x)=x\}.
@@ -85,7 +85,7 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  
 	\subsection{Gruppo delle isometrie}
  
- Sia $(V,\phi)$ uno spazio euclideo. $\phi$ induce una distanza $d$ su $V$. Allora si pone
+ Sia $(V,\phi)$ uno spazio euclideo e sia $d$ la distanza indotta da $\phi$ su $V$. Allora si pone
  $$\Isom{V,d}=\{f:V\to V\;|\;\forall P,Q\in V\quad d(P,Q)=d(f(P),f(Q))\}.$$
  
  \begin{remark} $\Isom{ V,d}$ gode delle seguenti proprietà:
@@ -174,7 +174,7 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  $A^2=I$ e $f(B)=AB+B=0$.
  \item $f(\frac{B}{2})=\frac{AB}{2}+B=\frac{AB+B}{2}+\frac{B}{2}=\frac{B}{2}$.
  \item Poiché $A^2=I,\quad A$ è diagonalizzabile con autovalori $1$ e $-1$, pertanto
- $R^n=V(1,A)\oplus V(-1,A)$. Per definizione si ha che $Fix(A)=V(1,A)$.
+ $\R^n=V(1,A)\oplus V(-1,A)$. Per definizione si ha che $Fix(A)=V(1,A)$.
  Vogliamo dimostrare che $Fix(A)^{\bot}=V(-1,A)$.  Se $x\in V(-1,A)$ e $y\in V(1,A)$, allora 
   \[
    \langle x,y\rangle=\tra{x}y=\tra{(-Ax)}Ay=-\tra{x}\tra{A}Ay=-\tra{x}y= -\langle x,y\rangle,
@@ -188,7 +188,7 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
 
   \begin{exercise}[Forma canonica per le simmetrie]
 Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
- $k=dim(Fix(f)),$ allora esiste una base ortonormale $B=\{v_1,\ldots,v_n\}$ di $\R^n$ rispetto alla quale
+ $k=dim(Fix(f)),$ allora esiste $\alpha\in\R^n$ ed esiste una base ortonormale $\mathcal{B}=\{v_1,\ldots,v_n\}$ di $\R^n$ rispetto alla quale
  $f$ si scrive come
  \[
  f(X)=\left(
