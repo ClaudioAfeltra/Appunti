@@ -117,7 +117,7 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  $g=f^{-1}$.
   \end{proof}
  
- \begin{remark}
+ \begin{remark}\label{oss:gruppoaff}
  Analogamente si dimostra che anche $\{\tau_v\circ f\;|\;v\in V,f\in GL(V)\}$ 
  è un gruppo di trasformazioni.
  \end{remark}
@@ -185,7 +185,23 @@ La proprietà associativa vale perché l'insieme è formato da funzioni.
  Ma per il punto \ref{sim:p} $B\in V(-1,A)$.
  \end{enumerate}
  \end{proof}
+
+  \begin{exercise}[Forma canonica per le simmetrie]
+Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
+ $k=dim(Fix(f)),$ allora esiste una base ortonormale $B=\{v_1,\ldots,v_n\}$ di $\R^n$ rispetto alla quale
+ $f$ si scrive come
+ \[
+ f(X)=\left(
+ \begin{array}{cc}
+  I_k & 0\\
+  0 & -I_{n-k}
+ \end{array}
+ \right)
+ X+\alpha v_n.
+ \]
+ \end{exercise}
  
+
 	\subsection{Riflessioni}
  
  \begin{definition}
@@ -217,41 +233,29 @@ Siano $\rho_1(X)=A_1X+B_1$ e $\rho_2(X)=A_2X+B_2$, $Fix(\rho_1)=H_1$ e
  Sappiamo che $A_1^2=A_2^2=I$ e $A_1B_1+B_1=A_2B_2+B_2=0$.
  
  \begin{description}
-  \item[I caso:] $H_1$ e $H_2$ sono paralleli (ossia hanno la stessa giacitura).
- Allora $Fix(A_1)=Fix(A_2)$. Pertanto $A_1$ e $A_2$ inducono una riflessione rispetto allo stesso piano.
- Dunque $A_1=A_2=A$.
- Ma allora $(\rho_2\circ\rho_1)(X)=A(AX+B_1)+B_2=A^2X+AB_1+B_2=X+(AB_1+B_2)=$
- $=X+(B_2-B_1)$
- Di conseguenza $\rho_2\circ\rho_1$ è una traslazione di $B_2-B_1$, che è il doppio della distanza tra
- $H_1$ e $H_2$.
- \item[II caso: ] $H_1$ e $H_2$ non sono paralleli.
- In tal caso $H_1\cap H_2$ è un sottospazio affine di dimensione $n-2$.
- Ma $H_1\cap H_2\subseteq Fix(\rho_1\circ\rho_2)$.
- Inoltre la giacitura di $Fix(\rho_2\circ\rho_1)$ è
- $Fix(A_2A_1)=V(1,A_2A_1)$. Allora $L=V(1,A_2A_1)^{\bot}$ è invariante per $A_2A_1$.
- Pertanto tutti i piani ortogonali a $H_1\cap H_2$ (che hanno giacitura $L$) sono invarianti per
- $\rho_2\circ\rho_1$.
- Per l'esercizio precedente su tali piani $\rho_2\circ\rho_1$ è composizione di riflessioni rispetto a rette incidenti,
- dunque è una rotazione.
+	\item[I caso:] $H_1$ e $H_2$ sono paralleli (ossia hanno la stessa giacitura).
+		Allora $Fix(A_1)=Fix(A_2)$. Pertanto $A_1$ e $A_2$ inducono una riflessione rispetto allo stesso piano.
+		Dunque $A_1=A_2=A$.
+		Ma allora $(\rho_2\circ\rho_1)(X)=A(AX+B_1)+B_2=A^2X+AB_1+B_2=X+(AB_1+B_2)=$
+		$=X+(B_2-B_1)$
+		Di conseguenza $\rho_2\circ\rho_1$ è una traslazione di $B_2-B_1$, che è il doppio della distanza tra
+		$H_1$ e $H_2$.
+	\item[II caso: ] $H_1$ e $H_2$ non sono paralleli.
+		In tal caso $H_1\cap H_2$ è un sottospazio affine di dimensione $n-2$.
+		Ma $H_1\cap H_2\subseteq Fix(\rho_1\circ\rho_2)$.
+		Inoltre la giacitura di $Fix(\rho_2\circ\rho_1)$ è
+		$Fix(A_2A_1)=V(1,A_2A_1)$. Allora $L=V(1,A_2A_1)^{\bot}$ è invariante per $A_2A_1$.
+		Pertanto tutti i piani ortogonali a $H_1\cap H_2$ (che hanno giacitura $L$) sono invarianti per
+		$\rho_2\circ\rho_1$.
+		Per l'esercizio precedente su tali piani $\rho_2\circ\rho_1$ è composizione di riflessioni rispetto a rette incidenti,
+		dunque è una rotazione.
  \end{description}
+ 
  \end{proof}
  
- \begin{exercise}[Forma canonica per le simmetrie]
-Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
- $k=dim(Fix(f)),$ allora esiste una base ortonormale $B=\{v_1,\ldots,v_n\}$ di $\R^n$ rispetto alla quale
- $f$ si scrive come
- $$f(X)=\left(
- \begin{array}{cc}
-  I_k & 0\\
-  0 & I_{n-k}
- \end{array}
- \right)
- X+\alpha v_n.
- $$
- \end{exercise}
  
  \begin{theorem}
- Ogni $f\in \Isom{ \R^n}$ è composizione di al più $n+1$ riflessioni
+	Ogni $f\in \Isom{ \R^n}$ è composizione di al più $n+1$ riflessioni
  \end{theorem}
  
  \begin{proof}
@@ -263,10 +267,8 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
   \quad x\in H\Longleftrightarrow ||x||^2=||x-B||^2\Longleftrightarrow\langle x,x\rangle=
  \langle x-B,x-B\rangle\Longleftrightarrow\langle B,B\rangle-2\langle B,X\rangle=0,
  \]
- equazione che definisce un piano. Inoltre, poiché $\frac{B}{2}\in H$, la giacitura di $H$ è 
- $Span(B)^{\bot}$.
- Sia $\rho_H$ la riflessione rispetto all'iperpiano $H$.
- Allora
+ equazione che definisce un piano. Inoltre, poiché $\frac{B}{2}\in H$, la giacitura di $H$ è $Span(B)^{\bot}$.
+ Sia $\rho_H$ la riflessione rispetto all'iperpiano $H$. Allora
  
  \[ \left\{
  \begin{array}{l}
@@ -274,49 +276,43 @@ Dimostrare che se $f\in \Isom{ \R^n}$ è una simmetria e
   (\rho_H\circ f)(0)=\rho_H(B)=0
  \end{array}
  \right.
- \Longrightarrow \rho_H\circ f\in O(n)\Longrightarrow \rho_H\circ f
+ \Longrightarrow \rho_H\circ f\in O(n)
  \]
- è composizione di al più $n$ riflessioni, dunque $f=\rho_h\circ(\rho_H\circ f)$
+ allora $\rho_H\circ f$ è composizione di al più $n$ riflessioni, dunque $f=\rho_h\circ(\rho_H\circ f)$
  è composizione di al più $n+1$ riflessioni.
-  \end{proof}
+ \end{proof}
  
- \begin{definition}Un' isometria si dice diretta se è composizione di un numero pari di riflessioni, si dice inversa se
- è composizione di un numero dispari di riflessioni. Se $f(X)=AX+B,\quad f$ è diretta se $det\; A=1$,
- è inversa se $det\; A=-1$.
+ \begin{definition}[Isometrie dirette e inverse]
+	Un' isometria $f(X)=AX+B$ si dice diretta se $det\; A=1$, inversa se $det\; A=-1$.
  \end{definition}
+ 
+ \begin{remark}
+	Dato che le riflessioni sono isometrie indirette, la definizione di isometria diretta (rispettivamente inversa)
+	è equivalente a chiedere che sia composizione di un numero pari (rispettivamente dispari) di riflessioni.
+ \end{remark}
+
  
  \begin{proposition}
  Se $f\in \Isom{ \R^n}$ ha almeno un punto fisso, è composizione di al più $n$ riflessioni.
  \end{proposition}
  
  \begin{proof}
- Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in \R^n$
- tale che $f(Q)=Q$. Sia inoltre $H$ definito come nella dimostrazione precedente.
- Allora come prima $\rho_H\circ f\in O(n)$, e poiché $d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H$, e pertanto
- $(\rho_h\circ f)(Q)=Q$.
- Perciò $dim(Fix(\rho_H\circ f))\ge 1$, e di conseguenza $\rho_h\circ f$ è composizione di al più
- $n-1$
- riflessioni.
- Dunque $f$ è composizione di al più $n$ riflessioni.
-  \end{proof}
+ Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in \R^n$ tale che $f(Q)=Q$. Sia inoltre $H$ definito
+ come nella dimostrazione precedente. Allora come prima $\rho_H\circ f\in O(n)$, e poiché $d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H$,
+ e pertanto $(\rho_h\circ f)(Q)=Q$. Perciò $dim(Fix(\rho_H\circ f))\ge 1$, e di conseguenza $\rho_h\circ f$
+ è composizione di al più $n-1$ riflessioni. Dunque $f$ è composizione di al più $n$ riflessioni.
+ \end{proof}
 
 	\subsection{Classificazione delle isometrie di $\R^2$}
  
- Alcuni esempi di isometrie di $\R^2$ sono:
- \begin{itemize}
-	\item traslazioni;
-	\item rotazioni;
-	\item riflessioni;
-	\item composizioni delle precedenti.
- \end{itemize}
  
- \begin{definition}
- Si chiama glissoriflessione (o riflessione rotatoria) la composizione di una riflessione con una traslazione parallela
- all'asse della riflessione.
+ \begin{definition}[Glissoriflessione]
+	Si chiama glissoriflessione (o riflessione rotatoria) la composizione di una riflessione con una traslazione parallela
+	all'asse della riflessione.
  \end{definition}
  
  \begin{remark}
- La glissoriflessione è un'isometria inversa senza punti fissi.
+	La glissoriflessione è un'isometria inversa senza punti fissi.
  \end{remark}
  
  \begin{theorem}[di classificazione delle isometrie piane]
@@ -329,6 +325,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
   \item glissoriflessione (isometria inversa senza punti fissi).
  \end{enumerate} 
  \end{theorem}
+ 
  \begin{proof}
  Sia $f\in \Isom{ \R^2}$. Allora $f$ è composizione di $k$ riflessioni, con
  $k\le 3$.
@@ -337,6 +334,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  Se $k=2$, come abbiamo già visto $f$ è una traslazione od una rotazione.
  Se $k=3,\; f=\rho_1\circ\rho_2\circ\rho_3$. Sia $r_i=Fix(\rho_i)$ (con $i=1,2,3$).
  $\rho_1\circ\rho_2$ può essere una traslazione od una rotazione.
+ 
  \begin{description}
  \item[I caso:] $\rho_1\circ\rho_2=\tau_v$ è una traslazione.
  Allora sia $v=v_1+v_2$, con $v_1//r_3$ e $v_2\bot r_3$.
@@ -345,6 +343,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  $\rho'_3$ rispetto ad un asse $r'_3$ parallelo a $r_3$.
  Dunque $f=\tau_{v_1}\circ\rho'_3$, che è una glissoriflessione se $v_1\ne 0$, è una riflessione se 
  $v_1=0$.
+ 
  \item[II caso:] $\rho_1\circ\rho_2$ è una rotazione rispetto ad un punto $P$ di angolo $\alpha$.
  Vanno distinti due ulteriori sottocasi:
  \begin{itemize}
@@ -360,8 +359,11 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
   opportuno asse passante per $P$.
   Allora $$f=\rho_1\circ\rho_2\circ\rho_3=\rho'_1\circ\rho_3\circ\rho_3=\rho'_1,$$ e dunque $f$ è una rotazione. 
  \end{itemize}
+ 
  \end{description}
-  \end{proof}
+ 
+ \end{proof}
+  
  \begin{remark}
  $\rho_1\circ\rho_2\circ\rho_3$ è una riflessione se e solo se i tre assi di riflessione sono paralleli
  o incidenti.
@@ -369,12 +371,6 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  
   \subsection{Classificazione delle isometrie di $\R^3$}
   
- Alcuni esempi di isometrie di $\R^3$ sono:
- \begin{itemize}
-  \item traslazioni (luogo dei punti fissi: $\emptyset$);
-  \item riflessioni (luogo dei punti fissi: un piano);
-  \item rotazioni (luogo dei punti fissi: una retta).
- \end{itemize}
  \begin{remark}
  La composizione di tre riflessioni rispetto a tre piani distinti incidenti in un punto (ma non in una retta)
  è la simmetria rispetto a quel punto.
@@ -388,36 +384,35 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
   avviene la rotazione.
  \end{enumerate}
  \end{remark}
+ 
  \begin{theorem}
  Tutte le isometrie di $\R^3$ sono traslazioni, riflessioni, rotazioni, glissorotazioni, riflessioni rotatorie
  o avvitamenti.
  \end{theorem}
  
   \section{Il gruppo di trasformazioni $A(V)$}
+ 
  Dato uno spazio vettoriale $V$ si definisce $A(V)=\{\tau_v\circ f\;|\; v\in V,\; f\in GL(V)\}$.
- È stato già visto che $A(V)$ è un gruppo di trasformazioni, e che coincide con il sottogruppo di $S(V)$
+ È stato già visto (vedi la \cref{oss:gruppoaff}) che $A(V)$ è un gruppo di trasformazioni, e che coincide con il sottogruppo di $S(V)$
  generato da $T(V)$ e da $GL(V)$.
  
  \vspace{0.5cm}
  
- \begin{definition}
- Dati un gruppo di trasformazioni $G$ di un insieme $X$ e un elemento $x$ di
- $X$ si chiama stabilizzatore di $x$ l'insieme $St_x(G)=\{g\in G\;|\; g(x)=x\}$.
- \end{definition}
- 
- \begin{proposition}
+ Consideriamo ora la naturale azione di $A(V)$ su $V$ definita da $\psi(f)(v)=f(v)$.
+ \begin{proposition} Valgono i seguenti fatti:
  \begin{enumerate}[label=\Roman*)]
-	 \item Se $|V|>2$ allora $St_v(GL(V))=GL(V)$ se e solo se $v=0$.
-	 \item $\forall v\in V\quad St_v(A(G))\cong GL(V)$.
+	 \item Se $|V|>2$ allora $St_v(GL(V))=GL(V)$ se e solo se $v=0$.\label{enum:stab1}
+	 \item $\forall v\in V\quad St_v(A(G))\cong GL(V)$.\label{enum:stab2}
 	\end{enumerate} 
  \end{proposition}
  
  \begin{proof}
- I) Ovviamente $St_0(GL(V))=GL(V).$
+ \begin{description}
+	\item [\ref{enum:stab1}] Ovviamente $St_0(GL(V))=GL(V).$
  D'altra parte se $v\ne 0$ allora è banale trovare una funzione $f\in GL(V)$ tale che $f(v)\ne v.$
   
  
- II) Innanzitutto $\forall v,w\in V\;\; St_v(A(V))$ e $St_w(A(V))$ sono isomorfi.
+	\item [\ref{enum:stab2}] Innanzitutto $\forall v,w\in V\;\; St_v(A(V))$ e $St_w(A(V))$ sono isomorfi.
  Infatti se
  $u=v-w$ (sicché $\tau_u(w)=v)$
  \begin{eqnarray*}
@@ -428,16 +423,20 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  è un isomorfismo.
  Inoltre $\tau_v\circ f\in St_0(A(V))$ se e solo se $(\tau_v\circ f)(0)=0,$ cioè se e solo se $v=0$,
  dunque $St_0(A(V))=GL(V)$.
- Pertanto $$\forall v\in V\quad St_v(A(V))\cong St_0(A(V))=GL(V).$$
+ Pertanto 
+ \[ 
+  \forall v\in V\quad St_v(A(V))\cong St_0(A(V))=GL(V).
+ \]
+ \end{description}
+ 
+ \end{proof}
  
  
- 
- Informalmente si può dire che in $V$ c'è un punto privilegiato, l'origine, mentre in $A(V)$
- tutti i punti sono equivalenti.
+ Informalmente si può dire che in $V$ c'è un punto privilegiato, l'origine, mentre in $A(V)$ tutti i punti sono equivalenti.
  Rileggendo la dimostrazione si può notare che ad ogni coppia di vettori $v,w\in V$ si è associata una traslazione
  $\tau_{v-w}$, e le traslazioni costituiscono un gruppo isomorfo a $(V,+)$.
  Grazie alla definizione di spazio affine si distingueranno gli elementi di $V$ pensati come punti o come traslazioni.
- \end{proof}
+ 
  
 	\section{Spazi affini}
  
