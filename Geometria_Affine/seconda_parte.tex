@@ -30,11 +30,11 @@ In particolare:
 \end{definition}
 \begin{remark}
 	\'E facile verificare che $\sim$ è una relazione di equivalenza
-	(discende banalmente dal fatto che $\K^{*}$ è un gruppo rispetto la moltiplicazione).
+	(discende banalmente dal fatto che $\K^{*}$ è un gruppo rispetto alla moltiplicazione).
 \end{remark}
 
 \begin{definition}[Ipersuperficie affine]
-	Ogni classe di equivalenza di polinomi $[g]$ in $\K[x_1,\dots,x_n]$ rispetto $\sim$ è detta ipersuperficie.
+	Ogni classe di equivalenza di polinomi $[g]$ in $\K[x_1,\dots,x_n]$ rispetto a $\sim$ è detta ipersuperficie.
 	Inoltre $g(x)=0$ è detta equazione dell'ipersuperficie
 \end{definition}
 
@@ -46,15 +46,16 @@ In particolare:
 	Useremo anche la notazione $\Psi^{-1}[g]$ per una ipersuperficie equivalente a $[g]$ mediante l'affinità $\Psi \in \Aff{K^n}$.
 \end{remark}
 \begin{remark}
-	Anche in questo caso è facile verificare che la relazione $\affeq$ è di equivalenza, dato che $\Aff{\K^n}$ è un gruppo.
+	Anche in questo caso è facile verificare che la relazione $\affeq$ è di equivalenza, dato che $\Aff{\K^n}$ è un gruppo rispetto alla
+	composizione.
 \end{remark}
 \begin{remark}
 	Notiamo che $[g]\affeq [h]\Rightarrow \text{deg}(g)=\text{deg}(h)$,
 	poiché il grado di $g(\Psi(x))$ non può essere più grande di quello di $g(x)$, e il viceversa vale per l'invertibilità di $\Psi$.
 \end{remark}
 
-A questo punto passiamo allo studio di alcune ipersuperfici affini tra le più importanti. In particolare tratteremo il caso in cui le ipersuperfici
-sono di primo grado e quello in cui sono di grado due (dette quadriche) nei casi particolari in cui $\K=\R$ oppure $\K=\C$.
+A questo punto passiamo allo studio di alcune ipersuperfici affini tra le più importanti. In particolare tratteremo il caso in cui le 
+ipersuperfici sono di primo grado e quello in cui sono di grado due (dette quadriche) nei casi particolari in cui $\K=\R$ oppure $\K=\C$.
 
 \begin{proposition}[Grado $1$]
 	Tutti i polinomi di primo grado sono affinemente equivalenti;
@@ -62,13 +63,13 @@ sono di primo grado e quello in cui sono di grado due (dette quadriche) nei casi
 \end{proposition}
 
 \begin{proof}
-	Notiamo preliminarmente che un polinomio di primo grado possiamo denotarlo con $g(x)=\tra{A}x+b$ dove $A\in \K^n$, $A\neq 0$ e $b\in \K$.
+	Notiamo preliminarmente che possiamo denotare un polinomio di primo grado con $g(x)=\tra{A}x+b$ dove $A\in \K^n$, $A\neq 0$ e $b\in \K$.
 	Consideriamo ora il polinomio $h(x)=\tra{A'}x+b'$ e cerchiamo $\Psi\in\Aff{K^n}$ tale che $g\circ \Psi = h$, ovvero che
 	\[
 		\tra{A}(Mx+N)+b=\tra{A'}x+b'
 	\]
 	dove $M\in \GL{\K^n}$ e $N\in \K^n$. In particolare vogliamo che esistano tali $M$ e $N$.
-	Ma è ovvio che esiste $M$ tale che $\tra{A}M=\tra{A'}$ e $N$ tale che $\tra{A}N+b=b'$ dato che $A\neq 0$.
+	Ma è ovvio che esiste $M$ tale che $\tra{A}M=\tra{A'}$ e $N$ tale che $\tra{A}N+b=b'$ dato che $A$ è invertibile.
 \end{proof}
 
 
@@ -107,7 +108,7 @@ x \\
 	Se $g(x)=\tra{x}Qx$ allora $V(g)$ è un cono.
 \end{lemma}
 \begin{proof}
-	Ovvio per l'omogeneità di $g(x)$.
+	Ciò è ovvio per l'omogeneità di $g(x)$.
 \end{proof}
 
 Data la \cref{oss:isomf}, possiamo equivalentemente parlare dello studio delle quadriche di $\K^n$ come delle quadriche omogenee in $\K^{n+1}$.
@@ -123,7 +124,7 @@ M & N \\ 0 & 1
 \end{lemma}
 \begin{proof}
 	Basta fare un semplice conto: $g(\Psi(x))=\tra{\Psi(x)}Q \Psi(x) = \tra{x}\tra{\tilde M_N}Q \tilde M_N x$ da cui la tesi.
-	Tuttavia se svolgiamo il conto tenendo presente che  $\tilde M_N$ e $Q$ sono matrici $n+1\times n+1$ otteniamo
+	Tuttavia se svolgiamo il conto tenendo presente che  $\tilde M_N$ e $Q$ sono matrici $n+1\times n+1$ otteniamo che
 	\[
 		\tra{\tilde M_N}Q \tilde M_N = 
 		\left(
