@@ -297,7 +297,7 @@ Siano $\rho_1(X)=A_1X+B_1$ e $\rho_2(X)=A_2X+B_2$, $Fix(\rho_1)=H_1$ e
  \end{proposition}
  
  \begin{proof}
- Sia $f(0)=B\ne 0$ (se $f(0)=0$ il la tesi è manifesta) e sia $Q\in \R^n$ tale che $f(Q)=Q$. Sia inoltre $H$ definito
+ Sia $f(0)=B\ne 0$ (se $f(0)=0$ la tesi è manifesta) e sia $Q\in \R^n$ tale che $f(Q)=Q$. Sia inoltre $H$ definito
  come nella dimostrazione precedente. Allora come prima $\rho_H\circ f\in O(n)$, e poiché $d(Q,0)=d(f(Q),f(0))=d(Q,B),\quad Q\in H$,
  e pertanto $(\rho_h\circ f)(Q)=Q$. Perciò $dim(Fix(\rho_H\circ f))\ge 1$, e di conseguenza $\rho_h\circ f$
  è composizione di al più $n-1$ riflessioni. Dunque $f$ è composizione di al più $n$ riflessioni.
@@ -464,7 +464,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
 	F: V\times V & \to & V \\
 	(P,Q) & \mapsto & \vet{PQ}\stackrel{def}{=}Q-P
  \end{eqnarray*}
- \item Data $f\in Hom(V,W)$ e dato $b\in W$ siano $A=f^{-1}(b)$ e $V=f^{-1}(0)=ker(f)$.
+ \item Data $f\in Hom(U,W)$ e dato $b\in W$ siano $A=f^{-1}(b)$ e $V=f^{-1}(0)=ker(f)$.
  Allora $A$ è uno spazio affine su $V$ tramite
  \begin{eqnarray*}
   F: A\times A & \to & V \\
@@ -477,8 +477,8 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  
  Dalla definizione, fissato $v\in V,\;\exists !Q\in A$ tale che $\vet{PQ}=v$.
  Si definisce allora traslazione ogni funzione $\tau_v:A\to A$ tale che $\tau_v(P)=Q,$ dove $\vet{PQ}=v$.
- Inoltre si usa la definition $P+v=\tau_v(P)$.
- Con tale definition si ha che:
+ Inoltre si usa la notazione $P+v=\tau_v(P)$.
+ Con tale notazione si ha che:
  \begin{itemize}
 	\item $\vet{P(P+v)}= {v}$;
 	\item $P+\vet{PQ}=Q$.
@@ -505,7 +505,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  Dagli assiomi segue che $F_P$ è biunivoca e che $F_P(P)=\vet{PP}=0$. Dunque $F_P$ trasforma
  $P$ nell'origine di $V$.
  Dunque si vorrebbe trovare una definizione di ``combinazione affine'' di punti di $A$ che corrisponda alla combinazione
- lineare di vettori. Siano $P_1,P_2,\ldots,P_k\in A$. Per ogni $P\in A\; F_P:$ trasforma
+ lineare di vettori. Siano $P_1,P_2,\ldots,P_k\in A$. Per ogni $P\in A\; F_P$ trasforma
  $P_i$ in $\vet{PP_i}$.
  Dati $t_1,\ldots,t_k\in \K$ esiste $\sum_{i=1}^kt_i\vet{PP_i}\in V$, e dunque anche
  $F_P^{-1}(\sum_{i=1}^kt_i\vet{PP_i})\in A$.
@@ -513,7 +513,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  $$\forall P,Q\in A\quad P+\sum_{i=1}^kt_i\vet{PP_i}=Q+\sum_{i=1}^kt_i\vet{QP_i},$$
  il che accade se
  $$P+\sum_{i=1}^kt_i\vet{PP_i}=P+\sum_{i=1}^kt_i(\vet{PQ}+\vet{QP_i})=P+\left(\sum_{i=1}^kt_i\right)\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i}$$
- è uguale a
+ è eguale a
  $$Q+\sum_{i=1}^kt_i\vet{QP_i}=P+\vet{PQ}+\sum_{i=1}^kt_i\vet{QP_i},$$
  ossia se e solo se $\sum_{i=1}^kt_i=1$.
  Da ciò discende la seguente definizione.
@@ -549,9 +549,9 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  \vspace{0.5cm}
  
  \begin{example}
- Sia $P\in A$, e sia $W$ un sottospazio di $V.$ Allora
- $$F^{-1}_{P_0}(W)=\{P\in A\;|\}\vet{P_0P}\in W=\{P\in V\;|\;P=P_0+w, w\in W\}.$$
- Dunque $F^{-1}_{P_0}(P_0+W)=W$.
+ Sia $P_0\in A$, e sia $W$ un sottospazio di $V.$ Allora
+ $$F^{-1}_{P_0}(W)=\{P\in A\;|\;\vet{P_0P}\in W\}=\{P\in A\;|\;P=P_0+w, w\in W\}.$$
+ Dunque $F_{P_0}(P_0+W)=W$.
  \end{example}
  
  \vspace{0.5cm}
@@ -578,7 +578,7 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  
  \begin{proposition}
  Sia $H$ un sottospazio affine di $A$. Allora esiste un unico sottospazio vettoriale
- $W_H$ di $V$,  detto giacitura di $H$, tale che $\forall P\in H\quad H=P_0+W_H$.
+ $W_H$ di $V$,  detto giacitura di $H$, tale che $\forall P_0\in H\quad H=P_0+W_H$.
  \end{proposition}
  
  \begin{proof}
@@ -641,12 +641,12 @@ Ogni isometria di $\R^2$ è di uno dei seguenti tipi:
  Per definizione di combinazione affine vale $\subseteq$. Per il $\supseteq$ si ha
  \[
 	P_0+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k} 
-		=P_0+\left(1-\sum_{i=1}^{k}t_i\right)+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k},
+		=P_0+\left(1-\sum_{i=1}^{k}t_i\right)\vet{P_0P_0}+t_1\vet{P_0P_1}+\dots+t_k\vet{P_OP_k},
  \]
  che sta in $comb_a(P_0,\dots,P_k)$, $\forall t_1,\dots,t_k\in \K.$
  \end{proof}
  
- Più in generale, ponendo $comb_a(X)$ l'insieme di combinazioni affini di tutti i possibili sottoinsiemi finiti di $X$
+ Più in generale, chiamando $comb_a(X)$ l'insieme di combinazioni affini di tutti i possibili sottoinsiemi finiti di $X$
  si ottiene l'analogo della proposizione appena dimostrata.
  
  \begin{definition}
@@ -716,8 +716,7 @@ Dati $H,L\subseteq A$ sottospazi affini si ha che
  \end{definition}
  
  \begin{definition}
- Sia $n=dim\;A$. Ogni $n+1$-upla di punti $\{P_0,\dots, P_n\}$
- che siano affinemente indipendenti.
+ Sia $n=dim\;A$. Si chiama riferimento affine ogni $n+1$-upla di punti $\{P_0,\dots, P_n\}$ affinemente indipendenti.
  \end{definition}
  
  \begin{remark}[passaggio da un riferimento affine ad base di vettori]
@@ -728,7 +727,7 @@ Dati $H,L\subseteq A$ sottospazi affini si ha che
  \end{remark}
  
  \begin{proposition}
- Se $R=\{P_0,\dots,P_k\}$ è un riferimento affine di $A$, allora
+ Se $\mathcal{R}=\{P_0,\dots,P_k\}$ è un riferimento affine di $A$, allora
  \[
 	\forall P\in A, \exists ! a_0,\dots,a_n\in \K :\ P=a_0P_0+\dots+a_nP_n.
  \]
@@ -787,7 +786,7 @@ Dati $H,L\subseteq A$ sottospazi affini si ha che
  \end{proof}
  
  \begin{proposition}
- Se $f\in \Aff{v}$ allora esistono e sono unici $v\in V$ e $g\in GL(V)$ tali che
+ Se $f\in \Aff{V}$ allora esistono e sono unici $v\in V$ e $g\in GL(V)$ tali che
  $f=\tau_v\circ g.$
  \end{proposition}
  
@@ -816,7 +815,7 @@ Dato uno spazio $A$ affine su $V$ e dati i riferimenti affini $L=(P_0,P_1,\ldots
  allora si ha che $F_{P_0}(L)=(0,\vet{P_0P_1},\dots,\vet{P_0P_n})=(0,B)$ dove $B\in V$ è un vettore
  di dimensione $n$; similmente $F_{Q_0}(M)=(0,C).$
  
- Ora, $B,C$, per motivi dimensionali, sono basi dello spazio $V$, pertanto esiste un unico endomorfismo lineare
+ Ora $B$ e $C$, per motivi dimensionali, sono basi dello spazio $V$, pertanto esiste un unico endomorfismo lineare
  $g$ che mappa $B$ in $C$. Infine, sia $\tau:V\rightarrow V$ la traslazione del vettore
  $\vet{P_0Q_0}$. Mostriamo che la mappa $f:A\rightarrow A$ definita da
  \[
@@ -851,7 +850,7 @@ Dato uno spazio $A$ affine su $V$ e dati i riferimenti affini $L=(P_0,P_1,\ldots
  \begin{definition}[gruppo delle affinità]
  consideriamo il seguente insieme
  \[
-	\Aff{\K^n}=\{x\mapsto Mx+N : M\in GL{\K^n}, N\in \K^n\}
+	\Aff{\K^n}=\{x\mapsto Mx+N : M\in \GL{\K^n}, N\in \K^n\}
  \]
  e l'operazione di composizione $\circ$: la coppia $(\Aff{\K^n},\circ))$ si dice gruppo delle affinità di $\K^n$.
  \end{definition}
@@ -863,12 +862,12 @@ Dato uno spazio $A$ affine su $V$ e dati i riferimenti affini $L=(P_0,P_1,\ldots
 	1
 	\end{smallmatrix}\right)$
 è un isomorfismo affine tra $\K^n$ e
-$H=\{x\in \K^{n+1} : x_{n+1}=0\}$ il quale è sottospazio affine di $\K^{n+1}$.
+$H=\{x\in \K^{n+1} : x_{n+1}=1\}$ il quale è sottospazio affine di $\K^{n+1}$.
  \end{remark}
  
  Vogliamo ora far vedere che questo isomorfismo è più profondo di quanto non appaia a prima vista. In particolare cercheremo di studiare
  la relazione tra le trasformazioni affini in $\K^n$ e le trasformazioni lineari in $\K^{n+1}$ arrivando ad identificare
- $\Aff{\K^n}$ con un sottogruppo di $GL(n,\K)$.
+ $\Aff{\K^n}$ con un sottogruppo di $GL(n+1,\K)$.
  
  \begin{definition}
   $G(H)=\{g\in GL(n+1,\K):g(H)=H\}$.
