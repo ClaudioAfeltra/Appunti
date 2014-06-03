@@ -170,7 +170,10 @@ M & N \\ 0 & 1
 \end{proof}
 
 \begin{remark}\label{lem:formulacentro}
- Per la formula delle trasformazioni affini di una quadrica, $N$ è centro di una quadrica se e solo se $AN=-B$.
+ $N$ è centro di una quadrica se e solo se l'affinità $X\mapsto -X+2N$ lascia invariata $Q$, ossia, per la formula delle trasformazioni affini
+ di una quadrica, se e solo se $-\tra IA(2N)-\tra IB=B$, $\tra (2N)A(2N)+2\tra B(2N)+c=c$ e$\tra(-I)A(-I)=A$. La prima condizione equivale a
+ dire che $AN=-B$, e questo implica banalmente che anche la seconda condizione è vera, mentre la terza è banalmente sempre verificata.
+ Dunque $N$ è centro della conica $Q$ se e solo se $AN=-B$.
 \end{remark}
 	
  \begin{lemma}\label{lem:centroaff}
@@ -185,12 +188,6 @@ M & N \\ 0 & 1
 	Per la \cref{lem:formulacentro}, la tesi equivale a dire che $\tra MAM(M^{-1}(R-N))=-\tra M(AN+B)$, ossia, essendo $M$ invertibile,
 	che $A(R-N)=-AN-B$, ossia che $AR=-B$, il che è vero perché $R$ è un centro di $g$.
  \end{proof}
- 
- \begin{remark}\label{oss:invarianti}
-	Dal \cref{lem:cambioaffine} si ha facilmente che invarianti per congruenza sono conservate anche per trasformazioni affini sulle quadriche.
-	In particolare, se $\K = \C$ il rango delle matrici $Q$ e $A$ è invariante per trasformazioni affini;
-	se $\K= \R$, il rango e l'indice di Witt delle matrici $Q$ e $A$ sono entrambi invarianti.
-\end{remark}
 
 \subsection{Classificazione affine delle coniche reali e complesse}
 
@@ -233,8 +230,8 @@ M & N \\ 0 & 1
   Con un'ulteriore affinità lineare ci si può ricondurre alla forma $$Q_3=\left(
   \begin{array}{ccc}
    1 & 0 & 0\\
-   0 & 0 & \frac{1}{2}\\
-   0 & \frac{1}{2} & 0
+   0 & 0 & -\frac{1}{2}\\
+   0 & -\frac{1}{2} & 0
   \end{array}
   \right)$$
   Dunque ogni conica non a centro, reale o complessa, è affinemente equivalente alla quadrica rappresentata da $Q_3$, ossia alla
@@ -319,15 +316,15 @@ M & N \\ 0 & 1
  Dunque abbiamo trovato nove forme canoniche per le coniche reali (queste otto e la parabola) e dato che nessuna di esse ha la stessa quarterna
  $(rg(A),rg(Q),w(A),w(Q))$ esse sono rappresentanti di nove classi di equivalenza affine distinte di coniche reali.
 \end{proof}
- Le cinque classi di equivalenza affine delle coniche complesse e le nove di quelle reali sono riassunte dalle seguenti tabelle:
- 
+ Le cinque classi di equivalenza affine delle coniche complesse sono riassunte dalla seguente tabella:\\
+ \vspace{5mm}\\
  \begin{tabular}{|c|c|c|c|c|}
  \hline
   Nome & Equazione della & Matrice della & rg(A) & rg(Q)\\
    &  forma canonica & forma canonica & & \\
   \hline
   & & & & \\
-  Parabola & $x^2-y=0$ & $\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & \frac{1}{2}\\ 0 & \frac{1}{2} & 0 \end{smallmatrix}\right)$ & 1 & 3 \\
+  Parabola & $x^2-y=0$ & $\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & -\frac{1}{2}\\ 0 & -\frac{1}{2} & 0 \end{smallmatrix}\right)$ & 1 & 3 \\
   - & $x^2+y^2+1=0$ & $\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)$ & 2 & 3 \\
   Coppia di rette incidenti & $x^2+y^2=0$ & $\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{smallmatrix}\right)$ & 2 & 2 \\
   Coppia di rette parallele & $x^2+1=0$ & $\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)$ & 1 & 2 \\
@@ -335,25 +332,28 @@ M & N \\ 0 & 1
   \hline
  \end{tabular}
  
+ \vspace{5mm}
+ Invece le nove classi di equivalenza affine delle coniche reali sono le seguenti:\\
+  \vspace{0mm}\\
  \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
   Nome & Equazione della & Matrice della & rg(A) & rg(Q) & w(A) & w(Q)\\
    &  forma canonica & forma canonica & & & & \\
   \hline
   & & & & & & \\
-  Parabola&$x^2-y=0$& $\left(\begin{smallmatrix}1 & 0 & 0 \\ 0 & 0 &\frac{1}{2}\\ 0 &\frac{1}{2} & 0\end{smallmatrix}\right)$& 1 & 3 & 1 &1\\
+  Parabola&$x^2-y=0$& $\left(\begin{smallmatrix}1 & 0 & 0 \\ 0 & 0 &-\frac{1}{2}\\ 0 &-\frac{1}{2} & 0\end{smallmatrix}\right)$& 1 & 3 & 1 &1\\
   Ellisse immaginaria&$x^2+y^2+1=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)$&2&3&0&0\\
   Ellisse reale&$x^2+y^2-1=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{smallmatrix}\right)$&2&3&0&1\\
   Iperbole&$x^2-y^2-1=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{smallmatrix}\right)$&2&3&1&1\\
   Rette complesse incidenti&$x^2+y^2=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{smallmatrix}\right)$&2&2&0&1\\
-  Rette incidenti&$x^2-y^2=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{smallmatrix}\right)$&2&3&1&2\\
+  Rette incidenti&$x^2-y^2=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{smallmatrix}\right)$&2&2&1&2\\
   Rette complesse parallele&$x^2+1=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)$&1&2&1&1\\
   Rette parallele&$x^2-1=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{smallmatrix}\right)$&1&2&1&2\\
   Retta doppia&$x^2=0$&$\left(\begin{smallmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{smallmatrix}\right)$&1&1&1&2\\
   \hline
  \end{tabular}
  
- \subsection{Classificazione affine delle coniche reali e complesse}
+ \subsection{Classificazione affine delle quadriche reali e complesse}
  \begin{theorem}[Teorema di classificazione affine per le quadriche reali e complesse]
  Ogni quadrica complessa è affine ad una delle seguenti (dove $r=rg(A)$):
  \begin{itemize}
@@ -369,11 +369,13 @@ M & N \\ 0 & 1
    I_r & & 0 & & 0\\
    & & & & 0\\
    0 & & 0_{n-r} & & \vdots\\
-   & & & & \frac{1}{2}\\
+   & & & & -\frac{1}{2}\\
    \hline
-   0 & 0 &\dots & \frac{1}{2} & 0
+   0 & 0 &\dots & -\frac{1}{2} & 0
   \end{array} \right)$$
  \end{itemize}
+ Inoltre la coppia $rg(A), rg(Q))$ è un invariante totale di coniugio.
+ 
  Invece ogni quadrica reale è affine ad una delle seguenti:
  \begin{itemize}
   \item Se è a centro a $x_1^2+\ldots+x_p^2-x_{p+1}^2-\ldots-x_r+d=0$, dove $d$ è uguale a zero o ad uno, ossia alla quadrica
@@ -384,30 +386,128 @@ M & N \\ 0 & 1
    \hline
    0 & 0 & 0 & d
   \end{array} \right)$$
-  \item Se non è a centro a $x_1^2+\ldots+x_p^2-x_{p+1}^2-\ldots-x_r^2-x_n=0$ con $r<n$, ossia alla quadrica rappresentata dalla matrice
+  \item Se non è a centro a $x_1^2+\ldots+x_p^2-x_{p+1}^2-\ldots-x_r^2-x_n=0$ con $r<n$ e $p\ge r-2p$, ossia alla quadrica rappresentata dalla
+  matrice
   $$\left( \begin{array}{ccccc|c}
    I_p & 0 & & 0 & & 0\\
    0 & -I_{r-p} & & 0 & & 0 \\
    & & & & & 0\\
    0 & 0 & & 0_{n-r} & & \vdots\\
-   & & & & & \frac{1}{2}\\
+   & & & & & -\frac{1}{2}\\
    \hline
-   0 & 0 & 0 &\dots & \frac{1}{2} & 0
+   0 & 0 & 0 &\dots & -\frac{1}{2} & 0
   \end{array} \right)$$
  \end{itemize}
  \end{theorem}
  \begin{proof}
   Il caso delle quadriche a centro è del tutto simile a quello delle analoghe coniche.
+  Invece per le quadriche non a centro per il teorema di Sylvester esiste una trasformazione lineare che le trasforma quelle complesse in
+  coniche del tipo
+  $$\left( \begin{array}{ccc|c}
+   I_r & 0 & & \\
+   & & & Z\\
+   0 & 0_{n-r} & & \\
+   \hline
+    & \tra Z & & c
+  \end{array} \right),
+  \text{ mentre trasforma quelle reali in }
+  \left( \begin{array}{ccc|c}
+   I_p & 0 & 0 & \\
+   0 & -I_{r-p} & 0 & Z\\
+   0 & 0 & 0_{n-r} & \\
+   \hline
+   & \tra Z & & c
+  \end{array} \right),$$
+  e con un cambio di segno ci si può ricondurre al caso $r-2p\ge p$.
+  Qui considereremo solo le quadriche reali, in quanto la dimostrazione nel caso complesso è analoga a quello reale con $r=p$.
+  $$ \text{Se } Z=\left( \begin{array}{c}
+                         z_1\\
+                         \vdots\\
+                         z_n
+                        \end{array}\right) \text{allora la traslazione } x\mapsto x-
+                        \left( \begin{array}{c}
+                         z_1\\
+                         \vdots\\
+                         z_p\\
+                         -z_{p+1}\\
+                         \vdots\\
+                         -z_r\\
+                         0\\
+                         \vdots\\
+                         0
+                        \end{array}\right) \text{ porta la quadrica in una del tipo}$$
+$$\left( \begin{array}{ccc|c}
+   I_p & 0 & 0 & 0\\
+   0 & -I_{r-p} & 0 & 0 \\
+   0 & 0 & 0_{n-r} & W\\
+   \hline
+   0 & 0 & \tra W & c
+  \end{array} \right) \text{ con } W=
+  \left( \begin{array}{c}
+  a_{r+1}\\
+  \vdots\\
+  a_n
+  \end{array}\right)\ne 0 \text{ (perché altrimenti la quadrica avrebbe centro).}$$
+  Ora cerchiamo un'affinità del tipo $$\left( \begin{array}{ccc|c}
+   0 & 0 & 0 & 0\\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & M & N\\
+   \hline
+   0 & 0 & 0 & 1
+  \end{array} \right)$$
+  che porti la conica alla forma canonica. Affinché ciò accada dev'essere che
+  $$\left( \begin{array}{ccc|c}
+   0 & 0 & 0 & 0\\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & \tra M & 0\\
+   \hline
+   0 & 0 & \tra N & 1
+  \end{array} \right)
+  \left( \begin{array}{ccc|c}
+   I_p & 0 & 0 & 0\\
+   0 & -I_{r-p} & 0 & 0 \\
+   0 & 0 & 0_{n-r} & W\\
+   \hline
+   0 & 0 & \tra W & c
+  \end{array} \right)
+  \left( \begin{array}{ccc|c}
+   0 & 0 & 0 & 0\\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & M & N\\
+   \hline
+   0 & 0 & 0 & 1
+  \end{array} \right)=$$
+  $$=\left( \begin{array}{ccc|c}
+   0 & 0 & 0 & 0\\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & 0 & \tra MW\\
+   \hline
+   0 & 0 & \tra WM & 2\tra NW+c
+  \end{array} \right)=
+  \left( \begin{array}{ccccc|c}
+   I_p & 0 & & 0 & & 0\\
+   0 & -I_{r-p} & & 0 & & 0 \\
+   & & & & & 0\\
+   0 & 0 & & 0_{n-r} & & \vdots\\
+   & & & & & -\frac{1}{2}\\
+   \hline
+   0 & 0 & 0 &\dots & -\frac{1}{2} & 0
+  \end{array} \right)$$
+  Poiché $W\ne 0$, è banale che esista $N$ tale che $\tra NW=-c$, mentre se $(v_1,\ldots, v_{n-r-1})$ è una base di $W^{\perp}$ allora la
+  matrice $$M=\left( \begin{array}{c|c|c|c|c}
+						v_1 & v_2 & \dots & v_{n-r-1} & -\frac{W}{2\tra WW}
+                      \end{array} \right)$$
+  è tale che $$\tra MW=
+  \left( \begin{array}{c}
+          0\\
+          0\\
+          \vdots\\
+          -\frac{1}{2}
+         \end{array} \right).$$
+  Dunque è stato dimostrato che ogni quadrica, reale o complessa, è affinemente equivalente ad una delle forme canoniche indicate.
+  Il fatto che gli invarianti di cui si parla nella tesi siano effettivamente degli invarianti è stato già visto, ed è facile mostrare che
+  ciascuna delle forme canoniche trovate abbia una stringa di invarianti diversa.
  \end{proof}
-
- 
-
-\begin{proof}
-	Il fatto che invarianti diversi comportino classi diverse è la \cref{oss:invarianti}.
-	Mostrare il contrario è una questione di un po' di pazienza: basta considerare tutti i casi, tenendo presente del caso coniche non a centro
-	e coniche a centro; in quest'ultimo aiuta molto il \cref{lem:centroconica}, applicabile dopo una traslazione opportuna che manda il centro
-	in $0$.
-\end{proof}
 
 \begin{remark}
 	A titolo di curiosità, si usa questa nomenclatura per la classificazione delle quadriche:
